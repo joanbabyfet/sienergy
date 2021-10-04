@@ -51,7 +51,7 @@
                 type: 2,
                 title: title,
                 shadeClose: true, //是否点击遮罩关闭
-                shade: 0.8, //遮罩
+                shade: 0.5, //遮罩
                 area: [
                     width ? width : '100%',
                     height ? height : '100%'
@@ -65,7 +65,7 @@
                 type: 2,
                 title: title,
                 shadeClose: true, //是否点击遮罩关闭
-                shade: 0.8, //遮罩
+                shade: 0.5, //遮罩
                 area: [
                     width ? width : '80%',
                     height ? height : '60%'

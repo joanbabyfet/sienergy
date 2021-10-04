@@ -28,8 +28,9 @@
         <div class="layui-form-item">
             <label class="layui-form-label">新聞內容</label>
             <div class="layui-input-block">
-                <textarea id="content" name="content" placeholder="請輸入新聞內容"
-                          class="layui-textarea" lay-verify="content">{{ $row['content'] }}</textarea>
+{{--                <textarea id="content" name="content" placeholder="請輸入新聞內容"--}}
+{{--                          class="layui-textarea" lay-verify="content">{{ $row['content'] }}</textarea>--}}
+                <textarea id="content" name="content" class="layui-textarea">{{ $row['content'] }}</textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -90,14 +91,14 @@
     layui.use(['form', 'layedit', 'upload'], function(){
         var form = layui.form;
         var $ = layui.$;
-        var layedit = layui.layedit;
-        layedit.set({ //要放在 layedit.build前
-            uploadImage: {
-                url: '{{ route('admin.upload.upload') }}', //接口url
-                type: 'post' //默认post
-            }
-        });
-        var content = layedit.build('content'); //初始化富文本id="content"
+        {{--var layedit = layui.layedit;--}}
+        {{--layedit.set({ //要放在 layedit.build前--}}
+        {{--    uploadImage: {--}}
+        {{--        url: '{{ route('admin.upload.upload') }}', //接口url--}}
+        {{--        type: 'post' //默认post--}}
+        {{--    }--}}
+        {{--});--}}
+        {{--var content = layedit.build('content'); //初始化富文本id="content"--}}
         var upload = layui.upload;
 
         upload.render({ //实例化
@@ -150,9 +151,9 @@
         });
 
         form.verify({
-            content: function(value) { //數據异步提交未同步的原因，使用layedit.sync(index) 解决
-                return layedit.sync(content);
-            }
+            // content: function(value) { //數據异步提交未同步的原因，使用layedit.sync(index) 解决
+            //     return layedit.sync(content);
+            // }
         });
         form.on('submit(save)', function(data){
             $.post($('#layer-form').attr("action"), data.field, function(res) {
@@ -165,6 +166,18 @@
                 }
             });
             return false; //阻止表單跳转
+        });
+
+        $('#content').redactor({
+            imageWebUpload: '{{ route('admin.upload.upload') }}',
+            imageUpload: '{{ route('admin.upload.upload') }}',
+            imageDir: 'image',
+            thumbWidth: 0,
+            thumbHeight: 0,
+            plugins: [''], //webuploadImage
+            minHeight: '250px',
+            maxHeight: '250px',
+            lang: 'zh_cn'
         });
     });
 </script>

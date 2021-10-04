@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ PLUGINS }}/laravel-layui-admin/lib/layui/css/layui.css">
     <link rel="stylesheet" href="{{ PLUGINS }}/laravel-layui-admin/css/admin.css">
+    <link rel="stylesheet" href="{{ PLUGINS }}/redactor/css/redactor.css" />
     @yield('style')
 </head>
 <body class="layui-layout-body">
@@ -34,6 +35,12 @@
 </div>
 <script src="{{ PLUGINS }}/laravel-layui-admin/lib/layui/layui.js"></script>
 <script src="{{ PLUGINS }}/laravel-layui-admin/js/admin.js"></script>
+<!-- REDACTOR Start -->
+<script src="{{ PLUGINS }}/redactor/js/jquery-2.0.3.min.js"></script>
+<script src="{{ PLUGINS }}/redactor/js/redactor.js"></script>
+<script src="{{ PLUGINS }}/redactor/plugins/webuploadImage.js"></script>
+<script src="{{ PLUGINS }}/redactor/js/zh_cn.js"></script>
+<!-- REDACTOR End -->
 @yield('script')
 <script>
     //JavaScript代碼区域
