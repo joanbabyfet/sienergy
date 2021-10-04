@@ -25,7 +25,7 @@ class ctl_news extends Controller
     public function index(Request $request)
     {
         $page_size  = $request->input('page_size', 10);
-        $page_no    = $request->input('page_no', 1);
+        $page_no    = $request->input('page', 1);
         $page_no    = !empty($page_no) ? $page_no : 1;
         $name       = $request->input('name');
         $cat_id    = $request->input('cat_id');

@@ -17,7 +17,7 @@ class ctl_faq extends Controller
     public function index(Request $request)
     {
         $page_size  = $request->input('page_size', 10);
-        $page_no    = $request->input('page_no', 1);
+        $page_no    = $request->input('page', 1);
         $page_no    = !empty($page_no) ? $page_no : 1;
         $cat_id    = $request->input('cat_id');
 
@@ -34,8 +34,8 @@ class ctl_faq extends Controller
             'cat_id'    =>  $cat_id,
             'status'    =>  1,
             'count'     =>  1,
+            'order_by'   =>  ['create_time', 'desc']
         ]);
-
         //分頁顯示
         $pages = mod_common::pages($rows['total'], $page_size);
 

@@ -30,8 +30,10 @@
                 <div class="mainTitle titleBrand">友善連結</div>
                 <div id="mainContents">
                     @foreach($list as $v)
+                        @if(!empty($v['img_url_dis'][0]))
                         <p><a href="{{ $v['url'] }}" target="_blank">
-                                <img src="{{ $v['img'] }}" alt="" width="220" height="70" border="0"/></a></p>
+                                <img src="{{ $v['img_url_dis'][0] }}" alt="" width="220" height="70" border="0"/></a></p>
+                        @endif
                     @endforeach
                 </div>
             </div>

@@ -6,7 +6,7 @@ html, body{
 	margin: 0; padding: 0;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:12px;
-	background:#fff; 
+	background:#fff;
 	/*卷軸定義*/
 	SCROLLBAR-FACE-COLOR: #f0f0f0;
 	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
@@ -31,7 +31,7 @@ a {
 } /* For IE */
 :focus {
   -moz-outline-style: none;
-} /* For Firefox */ 
+} /* For Firefox */
 
 /*標題設定*/
 h1 {font-size:16px; font-weight:normal; margin:0 0 10px 0; font-family:"微軟正黑體";}
@@ -78,7 +78,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 #HeaderIdx #top { padding:3px 0 0 0; height:100px; background:url(images/topBg.png) center top no-repeat; margin-bottom:0px; border-bottom:1px #FFFFFF solid;}
 #HeaderIdx .nav { float:right; width:250px; height:18px; line-height:18px; padding-top:60px; text-align:center; font-size:11px; font-family:"新細明體";}
 #HeaderIdx .nav A:link,#HeaderIdx .nav A:visited{color:#000; text-decoration:none;}
-#HeaderIdx .nav A:hover{color:#F60;} 
+#HeaderIdx .nav A:hover{color:#F60;}
 #HeaderIdx .nav .side { background:url(images/topNavSide.gif) no-repeat 13px 2px; padding:0 12px;}
 #HeaderIdx .nav .next { background: url(images/topNavSideNext.gif) no-repeat 6px 4px; padding:0 4px 0 6px;}
 #HeaderIdx img {}
@@ -119,7 +119,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 #homeMenu UL {list-style:none; margin:0px; padding:0;}
 #homeMenu UL li { overflow:hidden;}
 #homeMenu A:link,#homeMenu A:visited{color:#000; text-decoration:none; display:block;}
-#homeMenu A:hover{color:#fff;} 
+#homeMenu A:hover{color:#fff;}
 #homeMenu img { border:0px;}
 #homeVisualLogo { margin-left:13px;}
 .idxLogoBox { padding-left:30px;}
@@ -132,7 +132,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 #Header #top { padding:16px 0 0 0; height:48px; margin-bottom:0px;}
 #Header .nav { text-align:right; font-size:11px; font-family:"新細明體";}
 #Header .nav A:link,#Header .nav A:visited{color:#9E2611; text-decoration:none;}
-#Header .nav A:hover{color:#fff;} 
+#Header .nav A:hover{color:#fff;}
 #Header .nav .side { background:url(images/topNavSide.gif) no-repeat 8px 0px; padding:0 8px;}
 #Header .nav .next { background: url(images/topNavSideNext.gif) no-repeat 6px 4px; padding:0 4px 0 6px;}
 #Header img {}
@@ -183,7 +183,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 .visualProducts { background:#A6B4C1 !important;}
 .visualContactUS { background:#C8CAAC !important;}
 
-#containerFull #Header #pageBannerSide {} 
+#containerFull #Header #pageBannerSide {}
 #pageBanner { height:210px; padding:0 22px;}
 .pgHdImg { margin-bottom:6px;}
 
@@ -211,7 +211,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 #idxSidebar .banner .nav { font-size:8px; text-align:center; margin-top:4px;}
 #idxSidebar .banner .side {padding:0px 6px;}
 #idxSidebar .banner .nav A:link,#idxSidebar .banner .nav A:visited{color:#fff; text-decoration:none;}
-#idxSidebar .banner .nav A:hover{color:#FF0;text-decoration:underline;} 
+#idxSidebar .banner .nav A:hover{color:#FF0;text-decoration:underline;}
 
 #idxSidebar #innerIndSidebar .sidebarHeader {height:26px; font-size:16px; font-weight:bold; color:#000000; background: url(images/SitebarHdBg.jpg) no-repeat; padding:8px 0px 0px 20px; margin-bottom:6px;}
 #idxSidebar #innerIndSidebar .sidebarContents { margin:6px 0px 10px 0px; padding-left:10px; padding-top:10px;}
@@ -235,9 +235,9 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 #mainTop .marquee { float:right; width:196px; height:32px; line-height:32px; padding:0 10px; background:url(images/marqueeBg.png) no-repeat; color:#FF6317;}
 .serachSelect { width:100px; height:20px; background:url(images/serachSelectBg.png) no-repeat; vertical-align:top; font-size:11px; line-height:11px; padding:2px 8px; border:0px;}
 .serachInput { width:224px; height:12px; background:url(images/serachInputBg.png) no-repeat; vertical-align:top; font-size:11px; line-height:11px; padding:6px 8px 2px; margin:0px; border:0px;}
-#hotSerach { height:24px; margin-bottom:6px; padding:6px 10px; background:url(images/hotSearch.jpg) no-repeat;} 
+#hotSerach { height:24px; margin-bottom:6px; padding:6px 10px; background:url(images/hotSearch.jpg) no-repeat;}
 #hotSerach A:link,#hotSerach A:visited{color:#FF6318; text-decoration:none;}
-#hotSerach A:hover{color:#76BB6B;text-decoration:underline;} 
+#hotSerach A:hover{color:#76BB6B;text-decoration:underline;}
 
 #hotNews {}
 #innerHotNews {}
@@ -256,7 +256,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 .blockA .menu UL {list-style:none; margin:0px; padding:0; line-height:1.5em;}
 .blockA .menu UL li {clear:both; padding:0px; _display:inline;}
 .blockA .menu UL li A:link,.blockA .menu UL li A:visited{color:#333; text-decoration:none; display:block; background:url(images/iconProductArrow.gif) no-repeat 0px center; padding-left:14px; }
-.blockA .menu UL li A:hover{color:#ff6600;} 
+.blockA .menu UL li A:hover{color:#ff6600;}
 .blockA .menu UL li .subHeader A:link { background-image:url(images/iconProductArrowDown.gif);}
 .blockA .menu ul .current { color:#F00 !important; }
 
@@ -267,7 +267,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 .blockA .menu ul ul .current { color:#FF9900 !important;}
 .blockA .menu .iconHeader {margin-bottom:6px; height:30px; line-height:30px; border-top:0px #000 solid; border-bottom:0px #000 solid; _display:block; font-size:15px; color:#FFF;}
 .blockA .menu .iconHeader A:link,.blockA .menu .iconHeader A:visited{ color:#333;}
-.blockA .menu .iconHeader A:hover{color:#990000;} 
+.blockA .menu .iconHeader A:hover{color:#990000;}
 .blockA .menu .iconAd { background-image:url(images/iconAdvertising.gif);}
 .blockA .menu .iconHelp { background-image:url(images/iconHelp.gif);}
 .blockA .menu .iconFAQ { background-image:url(images/iconFAQ.gif);}
@@ -316,9 +316,9 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 .blockMain UL .products { padding:0; border:0px #333333 solid; margin-bottom:0px; display:block;}
 .blockMain UL .products:hover { border:0px #AB8D11 solid;}
 .productsNameBox A:link,.productsNameBox A:visited{color:#FF3300; text-decoration:none;}
-.productsNameBox A:hover{color:#000; text-decoration:underline;} 
+.productsNameBox A:hover{color:#000; text-decoration:underline;}
 .blockMain .no A:link,.blockMain .no A:visited{color:#fff; text-decoration:none;}
-.blockMain .no A:hover{color:#BBDEFE;text-decoration:underline;} 
+.blockMain .no A:hover{color:#BBDEFE;text-decoration:underline;}
 .blockMain .more { text-align:right; padding:6px 0; clear:both;}
 .blockMain .navPic { margin:6px 0;}
 .blockMain .navPic UL {list-style:none; overflow:hidden; margin:0 0 6px 0; padding:0px;}
@@ -382,7 +382,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 .newsA UL { float:left; list-style:none; margin:0 0 0 0px; padding:6px 6px 0 0;}
 .newsA UL li {padding:0px; background:url(images/iconNewsPt.gif) no-repeat left center; padding-left:10px; line-height:2em; clear:both;}
 .newsA A:link,.newsA A:visited{color:#000; text-decoration:none;}
-.newsA A:hover{color:#F60; text-decoration:underline;} 
+.newsA A:hover{color:#F60; text-decoration:underline;}
 .newsA .more { clear:both; text-align:left; margin:6px 0; padding:0 0 0 0px;}
 .newsA .imgIcon { float:left; width:76px; padding:10px 0 0 0;}
 .newsA .imgIcon img { border:1px #20ACBD solid; margin-bottom:6px;}
@@ -391,21 +391,21 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 .newsB UL {list-style:none; margin:0; padding:0;}
 .newsB UL li {padding:0px; background:url(images/iconNewsPt.gif) no-repeat left center; padding-left:10px; line-height:2em; clear:both;}
 .newsB A:link,.newsB A:visited{color:#fff; text-decoration:none;}
-.newsB A:hover{color:#900; text-decoration:underline;} 
+.newsB A:hover{color:#900; text-decoration:underline;}
 .newsB .more { text-align:left; margin:6px 0; padding:0 0 0 25px;}
 
 .newsC { float:left; width:209px; height:168px; padding:47px 20px 16px 14px; background:url(images/RulesFormsBox.jpg) no-repeat; font-size:11px; }
 .newsC UL {list-style:none; margin:0px; padding:6px 0 0; margin-left:2px;}
 .newsC UL li {padding:0px; background:url(images/iconNewsPt2.gif) no-repeat 0px 6px; padding-left:10px; line-height:1.6em; clear:both;}
 .newsC A:link,.newsC A:visited{color:#000; text-decoration:none;}
-.newsC A:hover{color:#04B3F5;text-decoration:underline;} 
+.newsC A:hover{color:#04B3F5;text-decoration:underline;}
 .newsC .more { text-align:right; margin:6px 0; padding:0 10px 0 0;}
 
 .newsList { padding:0px; }
 .newsList UL {list-style:none; margin:0px; padding:6px 0 0 !important;}
 .newsList UL li {padding:0px; background:url(images/iconNewsPt.gif) no-repeat left center; padding-left:10px; line-height:1.6em; clear:both;}
 .newsList A:link,.newsList A:visited{color:#000; text-decoration:none;}
-.newsList A:hover{color:#ff6600; text-decoration:underline;} 
+.newsList A:hover{color:#ff6600; text-decoration:underline;}
 .newsList .more { text-align:right; margin:6px 0; padding:0 0 0 0px;}
 
 .newsPhotos { float:left; width:630px; padding:0; border-right:solid 0px #CCC; margin-left:65px; margin-bottom:10px;}
@@ -413,7 +413,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 .newsPhotos .header { height:26px; background:url(images/idxHdSide.gif) no-repeat bottom; padding:22px 16px 0 0;}
 .newsPhotos UL {list-style:none; margin:0 0 0 0px; padding:6px 6px 0 0;}
 .newsPhotos UL li { float:left; width:90px; height:110px; padding:0px;}
-.newsPhotos UL li img { 
+.newsPhotos UL li img {
 	border:1px #333 solid;
 	-moz-box-shadow:4px 4px 12px -2px rgba(20%,20%,40%,0.5);
 	-webkit-box-shadow:4px 4px 12px -2px rgba(20%,20%,40%,0.5);
@@ -421,7 +421,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 }
 .newsPhotos UL li .info {}
 .newsPhotos A:link,.newsPhotos A:visited{color:#000; text-decoration:none;}
-.newsPhotos A:hover{color:#F60; text-decoration:underline;} 
+.newsPhotos A:hover{color:#F60; text-decoration:underline;}
 .newsPhotos .more { clear:both; text-align:left; margin:6px 0; padding:0 0 0 0px;}
 
 #mainNav { float:left; width:203px;}
@@ -437,10 +437,10 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 #pageMU UL {list-style:none; margin:0px; padding:0 0 0 16px; margin-left:2px;}
 #pageMU UL li {padding:0px; background:url(images/iconNewsPt.gif) no-repeat 0px 7px; padding-left:12px; line-height:2em; clear:both;}
 #pageMU A:link,#pageMU A:visited{color:#494948; text-decoration:none;}
-#pageMU A:hover{color:#04B3F5;text-decoration:underline;} 
+#pageMU A:hover{color:#04B3F5;text-decoration:underline;}
 
 .lmA li { background:url(images/lmenu_02.gif) no-repeat;}
-.lmA li  a:hover { background:#FFFFFF url(images/lmenu_02_f2.gif) no-repeat;} 
+.lmA li  a:hover { background:#FFFFFF url(images/lmenu_02_f2.gif) no-repeat;}
 
 
 /*pagePath*/
@@ -465,7 +465,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 #subMenu { height:23px; text-align:left; font-family:Arial, Helvetica, sans-serif; margin:0 30px 10px 0; padding-left:0px; text-align:right; color:#666;}
 #innerSubMenu { height:23px; line-height:23px; padding:0px;}
 #subMenu A:link,#subMenu A:visited{padding:0px; margin:0px; color:#333; text-decoration:none;}
-#subMenu A:hover{color:#FF3300;text-decoration:underline;} 
+#subMenu A:hover{color:#FF3300;text-decoration:underline;}
 #subMenu .side { background:url(images/footerNavSide.gif) no-repeat 10px 3px; padding:0 10px;}
 
 .mainTitle { position:relative; height:34px; line-height:34px; margin-bottom:12px; padding:0; font-size:18px; text-align:left; font-family:"微軟正黑體"; color:#000; background:url(images/pagHdBg.gif) repeat-x; }
@@ -475,7 +475,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 .mainTitleInfo { position:absolute; top:0px; right:0px; width:300px; text-align:right;}
 .mainTitleInfo img, .mainTitleInfo A { vertical-align: text-bottom; border:0px;}
 .mainTitleInfo A:link,.mainTitleInfo A:visited{color:#333; text-decoration:none;}
-.mainTitleInfo A:hover{color:#04B3F5;} 
+.mainTitleInfo A:hover{color:#04B3F5;}
 .mainTitleInfo .side { background:url(images/topNavSide.gif) no-repeat 7px 2px; padding:0 8px;}
 
 #mainContents { padding:0 30px 0 0px; line-height:1.8em; color:#000;}
@@ -533,7 +533,7 @@ td {font:Verdana, Arial, Helvetica, sans-serif; font-size:12px;}
 .files UL {list-style:none; margin:0px; padding:0; line-height:1.8em;}
 .files UL li {clear:both; padding:0px; _display:inline; background:url(images/icon/file_icon_pdf.gif) no-repeat left center;}
 .files UL li A:link,.files UL li A:visited{color:#000; text-decoration:none; display:block; padding-left:22px;}
-.files UL li A:hover{color:#990000;} 
+.files UL li A:hover{color:#990000;}
 .files .iconDWG { background:url(images/icon/file_icon_dwg.gif) no-repeat left center;}
 .files .iconPDF { background:url(images/icon/file_icon_pdf.gif) no-repeat left center;}
 .files .iconWORD { background:url(images/icon/file_icon_word.gif) no-repeat left center;}

@@ -25,13 +25,11 @@ class ctl_links extends Controller
             //'page_size' =>  $page_size,
             'status'    =>  1,
             'count'     =>  1,
+            'order_by'   =>  ['create_time', 'desc']
         ]);
-        //分頁顯示
-        $pages = mod_common::pages($rows['total'], $page_size);
 
         return view('web.links_index', [
             'list'  =>  $rows['data'],
-            'pages' =>  $pages,
         ]);
     }
 }
