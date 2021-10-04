@@ -24,7 +24,7 @@ class ctl_news extends Controller
     //列表
     public function index(Request $request)
     {
-        $page_size  = $request->input('page_size', 10);
+        $page_size  = $request->input('limit', 10);
         $page_no    = $request->input('page', 1);
         $page_no    = !empty($page_no) ? $page_no : 1;
         $name       = $request->input('name');

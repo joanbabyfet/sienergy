@@ -30,6 +30,7 @@
     </div>
 </div>
 <script src="{{ PLUGINS }}/laravel-layui-admin/lib/layui/layui.js"></script>
+<script src="{{ WEB_JS }}/main.js"></script>
 @section('script')
     {{-- 自定义js --}}
 @show

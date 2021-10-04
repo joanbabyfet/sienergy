@@ -58,9 +58,7 @@
                         @endphp
                     @endforeach
                 </div>
-                <div class="pageNumber">
-                    {{ $pages->links('pagination::web_default') }}
-                </div>
+                <div id="page" style="text-align: center"></div>
             </div>
         </div>
         <div id="mainFooterSide"></div>
@@ -71,5 +69,9 @@
 @section('script')
     @parent
     <script>
+        layui.use('laypage', function(){
+            //分頁器
+            web.paginate("{{ $pages->total() }}", "{{ $pages->currentPage() }}", "{{ $pages->perPage() }}");
+        });
     </script>
 @endsection
