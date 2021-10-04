@@ -46,7 +46,7 @@
                         <p>目前無最新訊息...</p>
                     @endif
                 </div>
-                <div id="page" style="text-align: center"></div>
+                <div id="page" style="text-align: center; margin-top: 20px"></div>
             </div>
         </div>
         <div id="mainFooterSide"></div>

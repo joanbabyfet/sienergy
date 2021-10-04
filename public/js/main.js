@@ -11,6 +11,7 @@
             curr: curr,
             limit: limit,
             limits: limits ? limits : [10, 20, 50, 100, 200, 500, 1000, 2000],
+            theme:'#FFB800;', //黃=#FFB800, 紅=#FF5722, 藍=#1E9FFF
             layout: ['prev', 'page', 'next'],
             jump: function(obj, first){
                 if(!first){

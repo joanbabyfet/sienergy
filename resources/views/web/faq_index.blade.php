@@ -58,7 +58,7 @@
                         @endphp
                     @endforeach
                 </div>
-                <div id="page" style="text-align: center"></div>
+                <div id="page" style="text-align: center; margin-top: 20px"></div>
             </div>
         </div>
         <div id="mainFooterSide"></div>
