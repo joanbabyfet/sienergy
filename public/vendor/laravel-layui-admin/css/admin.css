@@ -1,0 +1,100 @@
+#admin, body {
+    width: 100%;
+    min-height: 100%;
+    background: #f1f1f1;
+}
+
+.admin-breadcrumb {
+    padding: 0 20px;
+    position: relative;
+    z-index: 99;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 39px;
+    height: 39px;
+    overflow: hidden;
+    background: #fff;
+}
+
+#admin-login {
+    width: 350px;
+    padding: 20px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -195px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+}
+
+#admin-login h2 {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.label-required-next:after {
+    top: 6px;
+    right: 5px;
+    color: red;
+    content: '*';
+    position: absolute;
+    margin-left: 4px;
+    font-weight: 700;
+    line-height: 1.8em;
+}
+
+.form-control-static{
+    /*min-height:34px;*/
+    padding-left:10px;
+    padding-top:7px;
+    padding-bottom:7px;
+    margin-bottom:0;
+}
+
+/*上传组件*/
+.uploader-list {
+    margin-left: -15px;
+}
+
+.uploader-list .info {
+    position: relative;
+    margin-top: -25px;
+    background-color: black;
+    color: white;
+    filter: alpha(Opacity=80);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    width: 100px;
+    height: 25px;
+    text-align: center;
+    display: none;
+}
+
+.uploader-list .handle {
+    position: relative;
+    background-color: black;
+    color: white;
+    filter: alpha(Opacity=80);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    width: 100px;
+    text-align: right;
+    height: 18px;
+    margin-bottom: -18px;
+    display: none;
+}
+
+.uploader-list .handle i {
+    margin-right: 5px;
+}
+
+.uploader-list .handle i:hover {
+    cursor: pointer;
+}
+
+.uploader-list .file-item {
+    margin: 12px 0 0 15px;
+    padding: 1px;
+    float: left;
+}

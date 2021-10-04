@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drag and drop images</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="static/redactor/css/redactor.css" />
+    <link href="static/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="static/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <script src="static/redactor/js/jquery-2.0.3.min.js"></script>
+	<script src="static/redactor/js/redactor.js"></script>
+    <script src="static/webuploader/webuploader.js"></script>
+    <script src="static/redactor/plugins/webuploadImage.js"></script>
+    <script src="static/redactor/plugins/webuploadVideo.js"></script>
+    <script src="static/redactor/js/zh_cn.js"></script>    
+    <script src="static/redactor/plugins/fullscreen.js"></script>
+
+    <script type="text/javascript">
+        $(function()
+        {
+            $('#redactor_content').redactor({
+                imageGetJson: '?ct=upload&ac=redactor&type=file_manager_json',
+                imageUpload: '?ct=upload&ac=webuploader',
+                videoGetJson: '?ct=upload&ac=redactor&type=file_manager_json',
+                videoUpload: '?ct=upload&ac=webuploader',
+                plugins: [ 'fullscreen', 'webuploadImage', 'webuploadVideo'],
+                lang: 'zh_cn'
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+		<div id="main">
+            <textarea id="redactor_content">
+                <h3>Please, drag an image from your computer to Redactor</h3>
+            </textarea>
+		    </div>
+		</div>
+</body>
+</html>

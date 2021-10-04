@@ -1,0 +1,12 @@
+/node_modules
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+/vendor
+.env
+.idea
+*.iml
+*.ipr
+*.iws
+.DS_Store

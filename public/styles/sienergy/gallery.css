@@ -1,0 +1,57 @@
+.header {
+	font-size:20px; font-family:Arial, Helvetica, sans-serif; font-weight:bold;
+	border-bottom:#999999 1px dotted;
+	margin-bottom:6px; padding:4px 0px;
+}
+.header .info { float:right; font-size:10px; display:inline; padding-top:4px; position:relative; bottom:0px;}
+
+.headerSub {
+	font-size:12px; font-family:"Times New Roman", Times, serif;
+	border-bottom:#999999 1px dotted;
+	margin-bottom:6px; padding:4px 0px;
+	clear:both;
+}
+
+.photos {}
+.albumlist {
+	list-style-type: none; margin:0px; padding:0px;
+}
+.albumlist li {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	font: 12px, Arial, Helvetica, sans-serif;
+	color: #eeeeee;
+	text-align:center;
+}
+.albumlist img {
+	display: block;
+	margin-bottom:4px;
+	border: 1px solid #CCCCCC;
+	width:80px;
+	height:80px;
+}
+
+.photosClear { clear:both;}
+
+
+.certificate {}
+.certificateList {
+	list-style-type: none; margin:0px; padding:0px;
+}
+.certificateList li {
+	height:220px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font: 12px, Arial, Helvetica, sans-serif;
+	color: #eeeeee;
+	text-align:center;
+}
+.certificateList img {
+	display: block;
+	margin-bottom:4px;
+	border: 1px solid #CCCCCC;
+	width:120px;
+	height:169px;
+}
