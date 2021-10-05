@@ -25,6 +25,8 @@ class VerifyCsrfToken extends Middleware
         //排除於 CSRF 驗證流程
         //'alipay/*',
         //'*',
+        'upload',
+        'upload_chunked',
     ];
 
     /**
@@ -33,20 +35,20 @@ class VerifyCsrfToken extends Middleware
      * @param Closure $next
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|mixed
      */
-    public function handle($request, Closure $next)
-    {
-        try
-        {
-            parent::handle($request,$next);
-        }
-        catch (\Exception $e)
-        {
-            if($e instanceof TokenMismatchException)
-            {
-                return mod_common::error('CSRF Error', -4005); //csrf token不合法
-            }
-        }
-
-        return $next($request);
-    }
+//    public function handle($request, Closure $next)
+//    {
+//        try
+//        {
+//            parent::handle($request,$next);
+//        }
+//        catch (\Exception $e)
+//        {
+//            if($e instanceof TokenMismatchException)
+//            {
+//                return mod_common::error('CSRF Error', -4005); //csrf token不合法
+//            }
+//        }
+//
+//        return $next($request);
+//    }
 }

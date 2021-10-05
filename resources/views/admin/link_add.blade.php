@@ -66,10 +66,10 @@
                 {{--thumb_w: {{ $img_thumb_with }},--}}
             },
             //field:'file', //文件域的字段名
-            multiple: true,
+            multiple: false,
             accept: 'images',
             exts: 'jpg|jpeg|png|bmp', //限定上传類型
-            number: 3,//0为不限制上传数量
+            number: 1,//0为不限制上传数量
             size: 1024 * 3,//文件最大可允许上传的大小，單位 KB 0=不限制
             before: function(obj){
                 layer.msg('上傳中...', {icon: 16, shade: 0.01, time: 0});
