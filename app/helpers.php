@@ -1,7 +1,6 @@
 <?php
 
 use App\models\mod_common;
-use App\models\mod_option;
 use Illuminate\Support\Facades\Auth;
 
 /**
