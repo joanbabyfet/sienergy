@@ -37,8 +37,8 @@ class ctl_link extends Controller
         if($request->route()->getActionMethod() == 'export_list') //獲取調用方法名
         {
             $titles = [
-                'name'              =>'名稱',
-                'url'               =>'URL',
+                'name'              =>'鏈接名稱',
+                'url'               =>'鏈接地址',
                 'status_dis'        =>'狀態',
                 'create_time_dis'   =>'添加時間',
             ];
@@ -76,7 +76,7 @@ class ctl_link extends Controller
                 return mod_common::error(mod_link::get_err_msg($status), $status);
             }
             //寫入日志
-            mod_admin_user_oplog::add_log("友善連結添加 ");
+            mod_admin_user_oplog::add_log("友情鏈接添加 ");
 
             return mod_common::success([], trans('api.api_add_success'));
         }
@@ -98,7 +98,7 @@ class ctl_link extends Controller
                 return mod_common::error(mod_link::get_err_msg($status), $status);
             }
             //寫入日志
-            mod_admin_user_oplog::add_log("友善連結修改 {$id}");
+            mod_admin_user_oplog::add_log("友情鏈接修改 {$id}");
 
             return mod_common::success([], trans('api.api_update_success'));
         }
@@ -155,7 +155,7 @@ class ctl_link extends Controller
             return mod_common::error(mod_link::get_err_msg($status), $status);
         }
         //寫入日志
-        mod_admin_user_oplog::add_log("友善連結刪除 ".implode(",", $id));
+        mod_admin_user_oplog::add_log("友情鏈接刪除 ".implode(",", $id));
 
         return mod_common::success([], trans('api.api_delete_success'));
     }
@@ -174,7 +174,7 @@ class ctl_link extends Controller
             return mod_common::error(mod_link::get_err_msg($status), $status);
         }
         //寫入日志
-        mod_admin_user_oplog::add_log("友善連結啟用 ".implode(",", $id));
+        mod_admin_user_oplog::add_log("友情鏈接啟用 ".implode(",", $id));
 
         return mod_common::success([], trans('api.api_enable_success'));
     }
@@ -193,7 +193,7 @@ class ctl_link extends Controller
             return mod_common::error(mod_link::get_err_msg($status), $status);
         }
         //寫入日志
-        mod_admin_user_oplog::add_log("友善連結禁用 ".implode(",", $id));
+        mod_admin_user_oplog::add_log("友情鏈接禁用 ".implode(",", $id));
 
         return mod_common::success([], trans('api.api_disable_success'));
     }

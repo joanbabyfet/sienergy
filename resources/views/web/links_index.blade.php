@@ -26,8 +26,8 @@
         </div>
         <div id="bodyMain">
             <div id="innerBodyMain">
-                <div id="pagePath"><a href="{{ route('web.index.index') }}">首頁</a><span class="side">&nbsp;</span>友善連結</div>
-                <div class="mainTitle titleBrand">友善連結</div>
+                <div id="pagePath"><a href="{{ route('web.index.index') }}">首頁</a><span class="side">&nbsp;</span>友情鏈接</div>
+                <div class="mainTitle titleBrand">友情鏈接</div>
                 <div id="mainContents">
                     @foreach($list as $v)
                         @if(!empty($v['img_url_dis'][0]))

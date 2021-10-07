@@ -12,7 +12,7 @@
     <div class="admin-breadcrumb">
         <span class="layui-breadcrumb">
           <a href="{{ route('admin.index.index') }}">首頁</a>
-          <a><cite>友善連結</cite></a>
+          <a><cite>友情鏈接</cite></a>
         </span>
     </div>
 @endsection
@@ -22,7 +22,7 @@
     <div class="layui-card-body ">
         <form class="layui-form layui-col-space5" id="search-form" method="GET">
             <div class="layui-inline layui-show-xs-block">
-                <input type="text" name="name" placeholder="請輸入名稱" value="{{ request("name") }}" autocomplete="off"
+                <input type="text" name="name" placeholder="請輸入鏈接名稱" value="{{ request("name") }}" autocomplete="off"
                        class="layui-input">
             </div>
             <div class="layui-inline layui-show-xs-block">
@@ -46,8 +46,8 @@
             <thead>
             <tr>
                 <th lay-data="{field:'id', type:'checkbox', fixed:'left'}"></th>
-                <th lay-data="{field:'name'}">名稱</th>
-                <th lay-data="{field:'url'}">URL</th>
+                <th lay-data="{field:'name'}">鏈接名稱</th>
+                <th lay-data="{field:'url'}">鏈接地址</th>
                 <th lay-data="{field:'status'}">狀態</th>
                 <th lay-data="{field:'action', fixed: 'right', width:200, align:'center'}">操作</th>
             </tr>
