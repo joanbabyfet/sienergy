@@ -100,8 +100,10 @@
                 var noRefresh = false;
                 var checkStatus = table.checkStatus(obj.config.id);
                 var ids = [];
+                var flag = 0;
                 $(checkStatus.data).each(function (i, o) { //o即为表格中一行的數據
                     ids.push(o.id);
+                    flag++;
                 });
                 switch(obj.event)
                 {
