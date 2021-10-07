@@ -34,7 +34,7 @@ class seed_permission_groups extends Seeder
             ['新聞分類', $created_at],
             ['問答管理', $created_at],
             ['問答分類', $created_at],
-            ['友善連結', $created_at],
+            ['友情鏈接', $created_at],
             ['文章管理', $created_at],
             ['緩存管理', $created_at],
             ['配置管理', $created_at],
