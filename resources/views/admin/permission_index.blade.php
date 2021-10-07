@@ -47,8 +47,8 @@
         <script type="text/html" id="toolbar">
             <div class="layui-btn-container">
                 <a class="layui-btn layui-btn-sm" onclick="admin.openLayerForm('{{ route("admin.permission.add") }}', '權限添加', 'POST', '600px', '400px')"><i class="layui-icon"></i>新增</a>
-                <a class="layui-btn layui-btn-sm" lay-event="batch_del"><i class="layui-icon">&#xe640;</i>批量刪除</a>
-                <a class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon">&#xe67d;</i>匯出</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="batch_del"><i class="layui-icon">&#xe640;</i>批量刪除</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="export"><i class="layui-icon">&#xe67d;</i>匯出</a>
             </div>
         </script>
         <table id="list" lay-filter="list" style="display: none"

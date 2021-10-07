@@ -37,7 +37,7 @@
     <div class="layui-card-body ">
         <script type="text/html" id="toolbar">
             <div class="layui-btn-container">
-                <a class="layui-btn layui-btn-sm" lay-event="batch_del"><i class="layui-icon">&#xe640;</i>批量刪除</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="batch_del"><i class="layui-icon">&#xe640;</i>批量刪除</a>
             </div>
         </script>
         <table id="list" lay-filter="list" class="layui-table" lay-data="{toolbar: '#toolbar', defaultToolbar: ['filter'], page: false}">
