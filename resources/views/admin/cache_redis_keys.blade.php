@@ -101,32 +101,39 @@
                 var noRefresh = false;
                 var checkStatus = table.checkStatus(obj.config.id);
                 var keys = [];
+                var flag = 0;
                 $(checkStatus.data).each(function (i, o) { //o即为表格中一行的數據
                     keys.push(o.key);
+                    flag++;
                 });
                 switch(obj.event)
                 {
                     case 'batch_del': //批量刪除
-                        layui.layer.confirm('你確認刪除嗎？', {btn: ['確定', '取消']}, function (){
-                            $.ajax({
-                                url: '{{ route('admin.cache.delete') }}',
-                                type: 'POST',
-                                data: { keys: keys }, //送到服务器數據
-                                success: function(res) {
-                                    if (res.code === 0) {
-                                        layui.layer.msg(res.msg, {time: 2000, icon: 6});
-                                        if (!noRefresh) {
-                                            window.location = window.location.href
+                        if(flag !== 0){
+                            layui.layer.confirm('你確認刪除嗎？', {icon: 3, title: "提示", btn: ['確定', '取消']}, function (){
+                                $.ajax({
+                                    url: '{{ route('admin.cache.delete') }}',
+                                    type: 'POST',
+                                    data: { keys: keys }, //送到服务器數據
+                                    success: function(res) {
+                                        if (res.code === 0) {
+                                            layui.layer.msg(res.msg, {time: 2000, icon: 6});
+                                            if (!noRefresh) {
+                                                window.location = window.location.href
+                                            }
                                         }
+                                        else {
+                                            layui.layer.msg(res.msg, {time: 2000, icon: 5});
+                                        }
+                                    },
+                                    error: function () {
                                     }
-                                    else {
-                                        layui.layer.msg(res.msg, {time: 2000, icon: 5});
-                                    }
-                                },
-                                error: function () {
-                                }
+                                });
                             });
-                        });
+                        }
+                        else{
+                            layui.layer.msg('請先選擇數據', {time: 2000, icon: 5});
+                        }
                         break;
                 }
             });

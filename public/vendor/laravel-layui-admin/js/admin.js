@@ -43,6 +43,29 @@
     });
   };
 
+    Admin.prototype.openLayerConfirm = function (url, th, content, success_msg, isRefresh) {
+        layui.layer.confirm(content, {
+            icon: 3, title: "提示", btn: ['確定', '取消']
+        }, function () {
+            $.ajax({
+                type: "POST",
+                url: url,
+                success: function() {
+                    if (isRefresh) {
+                        window.location = window.location.href
+                        return false;
+                    }
+                    $(th).parent().parent().parent().remove();
+                    layui.layer.close();
+                    layui.layer.msg(success_msg, {time: 2000, icon: 6})
+                    location.reload(); //刷新页面,总条数才会更新
+                },
+            });
+        }, function () {
+            layui.layer.close();
+        });
+    };
+
     Admin.prototype.openLayerIframe = function (url, title, is_mobile, width, height) {
         var layer_id;
         if(is_mobile)
