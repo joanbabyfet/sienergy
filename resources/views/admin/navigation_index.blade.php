@@ -40,7 +40,7 @@
     <div class="layui-card-body ">
         <div class="layui-btn-container">
             <a class="layui-btn layui-btn-sm" onclick="admin.openLayerForm('{{ route("admin.navigation.add") }}', '菜單添加', 'POST', '500px', '350px')"><i class="layui-icon"></i>新增</a>
-{{--            <a class="layui-btn layui-btn-sm" lay-event="batch_del"><i class="layui-icon">&#xe640;</i>批量刪除</a>--}}
+{{--            <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="batch_del"><i class="layui-icon">&#xe640;</i>批量刪除</a>--}}
         </div>
         <table class="layui-table layui-form" id="tree-table" lay-size="sm"></table>
     </div>

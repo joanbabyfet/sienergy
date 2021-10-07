@@ -42,7 +42,7 @@
     <div class="layui-card-body ">
         <script type="text/html" id="toolbar">
             <div class="layui-btn-container">
-                <a class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon">&#xe67d;</i>匯出</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="export"><i class="layui-icon">&#xe67d;</i>匯出</a>
             </div>
         </script>
         <table id="list" lay-filter="list" style="display: none"
