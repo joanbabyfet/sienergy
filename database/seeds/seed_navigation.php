@@ -34,7 +34,7 @@ class seed_navigation extends Seeder
             [1, '', '/news_cat', 0, 'admin.news_cat.index', '新聞分類', 'admin', 'admin'],
             [1, '', '/faq', 0, 'admin.faq.index', '問答管理', 'admin', 'admin'],
             [1, '', '/faq_cat', 0, 'admin.faq_cat.index', '問答分類', 'admin', 'admin'],
-            [1, '', '/link', 0, 'admin.link.index', '友善連結', 'admin', 'admin'],
+            [1, '', '/link', 0, 'admin.link.index', '友情鏈接', 'admin', 'admin'],
             [1, '', '/h5', 0, 'admin.h5.index', 'H5管理', 'admin', 'admin'],
             [2, '', '/report/member_increase_data', 0, 'admin.report.member_increase_data', '會員增長數', 'admin', 'admin'],
             [3, '', '/admin_user', 0, 'admin.admin_user.index', '用戶管理', 'admin', 'admin'],

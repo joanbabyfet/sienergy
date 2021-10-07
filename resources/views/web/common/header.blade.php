@@ -5,7 +5,7 @@
             <a href="{{ route('web.index.index') }}"{!! Request::is('/') ? ' class="current"':'' !!}>HOME</a><span class="side">&nbsp;</span>
             <a href="#">English</a><span class="side">&nbsp;</span>
             <a href="#">中文</a><span class="side">&nbsp;</span>
-            <a href="{{ route('web.links.index') }}"{!! Request::is('links') ? ' class="current"':'' !!}>友善連結</a>
+            <a href="{{ route('web.links.index') }}"{!! Request::is('links') ? ' class="current"':'' !!}>友情鏈接</a>
 {{--            @guest($guard)--}}
 {{--                <a href="{{ route('web.login.showLoginForm') }}"{!! Request::is('links') ? ' class="current"':'' !!}>登入</a>--}}
 {{--            @endguest--}}

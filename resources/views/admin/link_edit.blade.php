@@ -3,9 +3,9 @@
         {{ csrf_field() }}
         <input type='hidden' name='id' value="{{ $row['id'] }}"/>
         <div class="layui-form-item">
-            <label class="layui-form-label label-required-next">名稱:</label>
+            <label class="layui-form-label label-required-next">鏈接名稱:</label>
             <div class="layui-input-block">
-                <input type="text" name="name" value="{{ $row['name'] }}" placeholder="請輸入名稱"
+                <input type="text" name="name" value="{{ $row['name'] }}" placeholder="請輸入鏈接名稱"
                        class="layui-input" required lay-verify="required">
             </div>
         </div>
@@ -17,9 +17,9 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label label-required-next">URL:</label>
+            <label class="layui-form-label label-required-next">鏈接地址:</label>
             <div class="layui-input-block">
-                <input type="text" name="url" value="{{ $row['url'] }}" placeholder="請輸入URL"
+                <input type="text" name="url" value="{{ $row['url'] }}" placeholder="請輸入鏈接地址"
                        class="layui-input" required lay-verify="required">
             </div>
         </div>
