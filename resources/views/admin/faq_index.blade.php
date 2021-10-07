@@ -96,76 +96,93 @@
                 var noRefresh = false;
                 var checkStatus = table.checkStatus(obj.config.id);
                 var ids = [];
+                var flag = 0;
                 $(checkStatus.data).each(function (i, o) { //o即为表格中一行的數據
                     ids.push(o.id);
+                    flag++;
                 });
                 switch(obj.event)
                 {
                     case 'batch_del': //批量刪除
-                        layui.layer.confirm('你確認刪除嗎？', {btn: ['確定', '取消']}, function (){
-                            $.ajax({
-                                url: '{{ route('admin.faq.delete') }}',
-                                type: 'POST',
-                                data: { ids: ids }, //送到服务器數據
-                                success: function(res) {
-                                    if (res.code === 0) {
-                                        layui.layer.msg(res.msg, {time: 2000, icon: 6});
-                                        if (!noRefresh) {
-                                            window.location = window.location.href
+                        if(flag !== 0){
+                            layui.layer.confirm('你確認刪除嗎？', {icon: 3, title: "提示", btn: ['確定', '取消']}, function (){
+                                $.ajax({
+                                    url: '{{ route('admin.faq.delete') }}',
+                                    type: 'POST',
+                                    data: { ids: ids }, //送到服务器數據
+                                    success: function(res) {
+                                        if (res.code === 0) {
+                                            layui.layer.msg(res.msg, {time: 2000, icon: 6});
+                                            if (!noRefresh) {
+                                                window.location = window.location.href
+                                            }
                                         }
+                                        else {
+                                            layui.layer.msg(res.msg, {time: 2000, icon: 5});
+                                        }
+                                    },
+                                    error: function () {
                                     }
-                                    else {
-                                        layui.layer.msg(res.msg, {time: 2000, icon: 5});
-                                    }
-                                },
-                                error: function () {
-                                }
+                                });
                             });
-                        });
+                        }
+                        else{
+                            layui.layer.msg('請先選擇數據', {time: 2000, icon: 5});
+                        }
                         break;
                     case 'batch_enable': //批量啟用
-                        layui.layer.confirm('你確認啟用嗎？', {btn: ['確定', '取消']}, function (){
-                            $.ajax({
-                                url: '{{ route('admin.faq.enable') }}',
-                                type: 'POST',
-                                data: { ids: ids }, //送到服务器數據
-                                success: function(res) {
-                                    if (res.code === 0) {
-                                        layui.layer.msg(res.msg, {time: 2000, icon: 6});
-                                        if (!noRefresh) {
-                                            window.location = window.location.href
+                        if(flag !== 0){
+                            layui.layer.confirm('你確認啟用嗎？', {icon: 3, title: "提示", btn: ['確定', '取消']}, function (){
+                                $.ajax({
+                                    url: '{{ route('admin.faq.enable') }}',
+                                    type: 'POST',
+                                    data: { ids: ids }, //送到服务器數據
+                                    success: function(res) {
+                                        if (res.code === 0) {
+                                            layui.layer.msg(res.msg, {time: 2000, icon: 6});
+                                            if (!noRefresh) {
+                                                window.location = window.location.href
+                                            }
                                         }
+                                        else {
+                                            layui.layer.msg(res.msg, {time: 2000, icon: 5});
+                                        }
+                                    },
+                                    error: function () {
                                     }
-                                    else {
-                                        layui.layer.msg(res.msg, {time: 2000, icon: 5});
-                                    }
-                                },
-                                error: function () {
-                                }
+                                });
                             });
-                        });
+                        }
+                        else{
+                            layui.layer.msg('請先選擇數據', {time: 2000, icon: 5});
+                        }
                         break;
                     case 'batch_disable': //批量禁用
-                        layui.layer.confirm('你確認禁用嗎？', {btn: ['確定', '取消']}, function (){
-                            $.ajax({
-                                url: '{{ route('admin.faq.disable') }}',
-                                type: 'POST',
-                                data: { ids: ids }, //送到服务器數據
-                                success: function(res) {
-                                    if (res.code === 0) {
-                                        layui.layer.msg(res.msg, {time: 2000, icon: 6});
-                                        if (!noRefresh) {
-                                            window.location = window.location.href
+                        if(flag !== 0){
+                            layui.layer.confirm('你確認禁用嗎？', {icon: 3, title: "提示", btn: ['確定', '取消']}, function (){
+                                $.ajax({
+                                    url: '{{ route('admin.faq.disable') }}',
+                                    type: 'POST',
+                                    data: { ids: ids }, //送到服务器數據
+                                    success: function(res) {
+                                        if (res.code === 0) {
+                                            layui.layer.msg(res.msg, {time: 2000, icon: 6});
+                                            if (!noRefresh) {
+                                                window.location = window.location.href
+                                            }
                                         }
+                                        else {
+                                            layui.layer.msg(res.msg, {time: 2000, icon: 5});
+                                        }
+                                    },
+                                    error: function () {
                                     }
-                                    else {
-                                        layui.layer.msg(res.msg, {time: 2000, icon: 5});
-                                    }
-                                },
-                                error: function () {
-                                }
+                                });
                             });
-                        });
+                        }
+                        else{
+                            layui.layer.msg('請先選擇數據', {time: 2000, icon: 5});
+                        }
                         break;
                     //匯出
                     case 'export':
