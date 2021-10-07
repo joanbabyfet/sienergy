@@ -41,10 +41,10 @@
         <script type="text/html" id="toolbar">
             <div class="layui-btn-container">
                 <a class="layui-btn layui-btn-sm" onclick="admin.openLayerForm('{{ route("admin.news.add") }}', '新聞添加', 'POST', '600px', '350px')"><i class="layui-icon"></i>新增</a>
-                <a class="layui-btn layui-btn-sm" lay-event="batch_del"><i class="layui-icon">&#xe640;</i>批量刪除</a>
-                <a class="layui-btn layui-btn-sm" lay-event="batch_enable"><i class="layui-icon">&#xe605;</i>啟用</a>
-                <a class="layui-btn layui-btn-sm" lay-event="batch_disable"><i class="layui-icon">&#x1006;</i>禁用</a>
-                <a class="layui-btn layui-btn-sm" lay-event="export"><i class="layui-icon">&#xe67d;</i>匯出</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="batch_del"><i class="layui-icon">&#xe640;</i>批量刪除</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="batch_enable"><i class="layui-icon">&#xe605;</i>批量啟用</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="batch_disable"><i class="layui-icon">&#x1006;</i>批量禁用</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="export"><i class="layui-icon">&#xe67d;</i>匯出</a>
             </div>
         </script>
         <table id="list" lay-filter="list" style="display: none"
