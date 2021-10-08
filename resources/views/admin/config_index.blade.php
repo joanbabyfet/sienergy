@@ -134,7 +134,7 @@
                             });
                         }
                         else{
-                            layui.layer.msg('請先選擇數據', {time: 2000, icon: 5});
+                            layui.layer.msg('請先選擇數據', {time: 2000});
                         }
                         break;
                     //匯出
