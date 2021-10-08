@@ -135,7 +135,7 @@
                             });
                         }
                         else{
-                            layui.layer.msg('請先選擇數據', {time: 2000, icon: 5});
+                            layui.layer.msg('請先選擇數據', {time: 2000});
                         }
                         break;
                     case 'batch_enable': //批量啟用
@@ -162,7 +162,7 @@
                             });
                         }
                         else{
-                            layui.layer.msg('請先選擇數據', {time: 2000, icon: 5});
+                            layui.layer.msg('請先選擇數據', {time: 2000});
                         }
                         break;
                     case 'batch_disable': //批量禁用
@@ -189,7 +189,7 @@
                             });
                         }
                         else{
-                            layui.layer.msg('請先選擇數據', {time: 2000, icon: 5});
+                            layui.layer.msg('請先選擇數據', {time: 2000});
                         }
                         break;
                     //匯出
