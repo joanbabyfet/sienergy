@@ -25,7 +25,7 @@ class CreateAdminTable extends Migration
             $table->tinyInteger('is_first_login')->default(1)->nullable()->comment('是否首次登录');
             $table->tinyInteger('is_audit')->default(0)->nullable()->comment('登陆是否需要后台进行人工审核 0: 不需要 1:需要');
             $table->integer('session_expire')->default(1440)->nullable()->comment('SESSION有效期，默认24分钟');
-            $table->string('session_id', 32)->default('')->nullable()->comment('登陆时session_id');
+            $table->string('session_id', 50)->default('')->nullable()->comment('登陆时session_id');
             $table->string('reg_ip', 15)->default('')->nullable()->comment('注册ip');
             $table->integer('login_time')->default(0)->nullable()->comment('最后登录时间');
             $table->string('login_ip', 15)->default('')->nullable()->comment('最后登录IP');
