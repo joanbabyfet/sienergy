@@ -59,7 +59,7 @@
                 layer.open({
                     type: 1
                     ,title: '更多'
-                    ,content: '<div style="padding: 15px;">处理右侧面板的操作</div>'
+                    ,content: '<div style="padding: 15px;"></div>'
                     ,area: ['260px', '100%']
                     ,offset: 'rt' //右上角
                     ,anim: 5
