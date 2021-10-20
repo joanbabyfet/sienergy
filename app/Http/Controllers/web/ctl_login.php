@@ -29,7 +29,7 @@ class ctl_login extends Controller
      */
     public function showLoginForm()
     {
-        return view("web.login_showLoginForm_v2");
+        return view("web.login_showLoginForm");
     }
 
     /**
