@@ -17,7 +17,7 @@ $factory->define(mod_admin_user::class, function (Faker $faker) {
         'realname' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'username' => $faker->unique()->userName,
-        'password' => bcrypt('Bb123456'),
+        'password' => bcrypt('123456'),
         'status' => 1,
         'safe_ips' => '',
         'is_first_login' => 1,
