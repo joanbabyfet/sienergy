@@ -34,7 +34,5 @@ Route::group(['middleware' => ['jwt.auth']], function() {
         Route::match(['GET', 'POST'], 'example/enable', 'ctl_example@enable')->name('api.example.enable');
         Route::match(['GET', 'POST'], 'example/disable', 'ctl_example@disable')->name('api.example.disable');
         Route::match(['GET', 'POST'], 'news', 'ctl_news@index')->name('api.news.index');
-        Route::match(['GET', 'POST'], 'test', 'ctl_test@index')->name('api.test.index');
-        Route::match(['GET', 'POST'], 'update_stock', 'ctl_test@update_stock')->name('api.test.update_stock');
     });
 });

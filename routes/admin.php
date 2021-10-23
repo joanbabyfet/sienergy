@@ -29,7 +29,6 @@ Route::group(['middleware' => ['auth:admin']], function (){ //中间件执行顺
     Route::match(['GET', 'POST'], 'download', 'ctl_upload@download')->name('admin.upload.download');
     Route::match(['GET', 'POST'], 'translate', 'ctl_common@translate')->name('admin.common.translate');
     Route::match(['GET', 'POST'], 'wk_send', 'ctl_common@wk_send')->name('admin.common.wk_send');
-    Route::match(['GET', 'POST'], 'test', 'ctl_test@index')->name('admin.test.index');
 
     Route::group(['middleware' => ['permission:admin']], function (){
         Route::match(['GET', 'POST'], 'admin_user', 'ctl_admin_user@index')->name('admin.admin_user.index');
