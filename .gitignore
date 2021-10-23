@@ -6,6 +6,7 @@
 /storage/logs/*
 /vendor
 .env
+composer.lock
 .idea
 *.iml
 *.ipr
