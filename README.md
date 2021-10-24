@@ -13,6 +13,7 @@
 
 ## Requires
 PHP 7.2 or Higher  
+Redis
 
 ## Install
 ```
