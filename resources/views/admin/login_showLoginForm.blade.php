@@ -35,7 +35,7 @@
                 </div>
                 <div class="layui-form-item">
                     <button type="submit" class="layui-btn" lay-submit lay-filter="login">立即登入</button>
-                    <button type="button" class="layui-btn layui-btn-primary">忘記密碼</button>
+                    <button type="button" id="forget_pwd" class="layui-btn layui-btn-primary">忘記密碼</button>
                 </div>
             </form>
         </div>
@@ -55,6 +55,11 @@
 
         form.verify(verify);
         form.on('submit(login)',function(data) {
+        });
+
+        //忘記密碼
+        $('#forget_pwd').on('click', function (e) {
+            layui.layer.msg('請聯繫管理員重置密碼', {time: 3000, icon: 6});
         });
     });
 </script>
