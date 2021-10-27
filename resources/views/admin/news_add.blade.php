@@ -37,7 +37,7 @@
              data-multiple="true"
              data-auto="true"
              data-size="20"
-             data-thumb_w=""
+             data-thumb_w="{{ $img_thumb_with }}"
              data-len="1"
              data-chunked='chunked'>
             <label class="layui-form-label">封面圖片:</label>
@@ -48,7 +48,7 @@
                     <i class="layui-icon">&#xe67c;</i> 选择文件</a>
                 <div class="layui-row">
                     <div class="layui-col-md12">
-                        <div class="layui-form-mid layui-word-aux">圖片格式需為 jpg、jpeg、png、bmp</div>
+                        <div class="layui-form-mid layui-word-aux">格式：jpg、jpeg、png、bmp</div>
                     </div>
                 </div>
                 <input type="hidden" class="form-control file" datatype="file" nullmsg="至少上传一张" errmsg="至少上传一张">
@@ -73,7 +73,7 @@
                     <i class="layui-icon">&#xe67c;</i> 选择文件</a>
                 <div class="layui-row">
                     <div class="layui-col-md12">
-                        <div class="layui-form-mid layui-word-aux">文件格式需為 pdf、doc、docx、xls、xlsx</div>
+                        <div class="layui-form-mid layui-word-aux">格式：pdf、doc、docx、xls、xlsx</div>
                     </div>
                 </div>
                 <input type="hidden" class="form-control file" datatype="file" nullmsg="至少上传一张" errmsg="至少上传一张">
