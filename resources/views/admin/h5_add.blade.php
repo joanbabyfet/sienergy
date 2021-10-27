@@ -70,7 +70,7 @@
             imageDir: 'image',
             thumbWidth: 0,
             thumbHeight: 0,
-            plugins: ['webuploadImage'], //webuploadImage
+            plugins: ['webuploadImage', 'webuploadVideo', 'fontcolor'],
             minHeight: '250px',
             maxHeight: '250px',
             lang: 'zh_cn'
