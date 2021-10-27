@@ -123,7 +123,7 @@ class ctl_link extends Controller
             'name'          => $request->input('name'),
             'name_en'       => $request->input('name_en'),
             'url'           => $request->input('url'),
-            'img'           => $request->input('img'),
+            'img'           => $request->input('img', []),
             'status'        => $request->input('status', 0),
             'create_user'   => $this->uid,
             'update_user'   => $this->uid,

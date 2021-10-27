@@ -28,55 +28,79 @@
         <div class="layui-form-item">
             <label class="layui-form-label">新聞內容</label>
             <div class="layui-input-block">
-{{--                <textarea id="content" name="content" placeholder="請輸入新聞內容"--}}
-{{--                          class="layui-textarea" lay-verify="content">{{ $row['content'] }}</textarea>--}}
                 <textarea id="content" name="content" class="layui-textarea">{{ $row['content'] }}</textarea>
             </div>
         </div>
-        <div class="layui-form-item">
+        <div class="layui-form-item uploader-group uploader-group-img"
+             data-token="{{ csrf_token() }}"
+             data-dir="image"
+             data-extensions="jpg,jpeg,png,bmp"
+             data-multiple="true"
+             data-auto="true"
+             data-size="20"
+             data-thumb_w=""
+             data-len="1"
+             data-chunked='chunked'>
             <label class="layui-form-label">封面圖片:</label>
             <div class="layui-input-block">
-                <div class="layui-upload">
-                    <button type="button" class="layui-btn layui-btn-sm layui-btn-primary upload"
-                            id="img">
-                        <i class="layui-icon">&#xe67c;</i>選擇圖片
-                    </button>
-                    <div class="layui-word-aux">圖片格式需為jpg、jpeg、png、bmp</div>
-                    <div class="layui-upload-list uploader-list img">
-                        @foreach($row['img_dis'] as $k => $v)
-                        <div id="" class="file-item">
-                            <div class="handle"><i class="layui-icon layui-icon-close"></i></div>
-                            <img class="layui-upload-img" style="width: 100px;height: 100px;" src="{{ $row['img_url_dis'][$k] }}">
-                            <input type="hidden" name="img[]" value="{{ $v }}" />
-                            <div class="info"></div>
+                <!--用来存放文件信息-->
+                <div class="uploader-list">
+                    @foreach($row['img_dis'] as $k => $v)
+                        <div id="WU_FILE_{{ $k + 10 }}" class="item img-item pull-left" style="margin-bottom:10px;margin-right:10px;">
+                            <img style="width:100px;height:100px;" src="{{ $row['img_url_dis'][$k] }}">
+                            <i class="fa fa-close close-btn"></i>
+                            <div class="layui-progress" lay-filter="pro" lay-showPercent="true" style="display: none;">
+                                <div class="layui-progress-bar" lay-percent="100%"></div>
+                            </div>
+                            <input type="hidden" name="img[]" value="{{ $v }}" class="hid-filename">
                         </div>
-                        @endforeach
+                    @endforeach
+                </div>
+                <a class="layui-btn layui-btn-sm layui-btn-primary uploader-picker" data-file="img[]" data-type="image">
+                    <i class="layui-icon">&#xe67c;</i> 选择文件</a>
+                <div class="layui-row">
+                    <div class="layui-col-md12">
+                        <div class="layui-form-mid layui-word-aux">圖片格式需為 jpg、jpeg、png、bmp</div>
                     </div>
                 </div>
+                <input type="hidden" class="form-control file" datatype="file" nullmsg="至少上传一张" errmsg="至少上传一张">
             </div>
         </div>
-{{--        <div class="layui-form-item">--}}
-{{--            <label class="layui-form-label">附件上傳:</label>--}}
-{{--            <div class="layui-input-block">--}}
-{{--                <div class="layui-upload">--}}
-{{--                    <button type="button" class="layui-btn layui-btn-sm layui-btn-primary upload"--}}
-{{--                            id="file">--}}
-{{--                        <i class="layui-icon">&#xe67c;</i>選擇圖片--}}
-{{--                    </button>--}}
-{{--                    <div class="layui-word-aux">圖片格式需為jpg、jpeg、png、bmp</div>--}}
-{{--                    <div class="layui-upload-list uploader-list file">--}}
-{{--                        @foreach($row['file_dis'] as $k => $v)--}}
-{{--                            <div id="" class="file-item">--}}
-{{--                                <div class="handle"><i class="layui-icon layui-icon-close"></i></div>--}}
-{{--                                <img class="layui-upload-img" style="width: 100px;height: 100px;" src="{{ $row['file_url_dis'][$k] }}">--}}
-{{--                                <input type="hidden" name="file[]" value="{{ $v }}" />--}}
-{{--                                <div class="info"></div>--}}
-{{--                            </div>--}}
-{{--                        @endforeach--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        <div class="layui-form-item uploader-group"
+             data-token="{{ csrf_token() }}"
+             data-dir="doc"
+             data-extensions="pdf,doc,docx,xls,xlsx"
+             data-multiple="false"
+             data-auto="true"
+             data-size="20"
+             data-thumb_w=""
+             data-len="1"
+             data-chunked='chunked'>
+            <label class="layui-form-label">附件上傳:</label>
+            <div class="layui-input-block">
+                <!--用来存放文件信息-->
+                <div class="uploader-list">
+                    @foreach($row['file_dis'] as $k => $v)
+                        <div id="WU_FILE_{{ $k + 10 }}" class="item img-item pull-left" style="margin-bottom:10px;margin-right:10px;">
+                            <p class="form-control-static"><a href="{{ $row['file_url_dis'][$k] }}">{{ $v }}</a><i class="fa fa-close close-btn" style="color:red"></i></p>
+                            <div class="layui-progress" lay-filter="pro" lay-showPercent="true" style="display: none;">
+                                <div class="layui-progress-bar" lay-percent="100%"></div>
+                            </div>
+                            <input type="hidden" name="file[]" value="{{ $v }}" class="hid-filename">
+                        </div>
+                    @endforeach
+                </div>
+                <!--data-type=image/file/video-->
+                <a class="layui-btn layui-btn-sm layui-btn-primary uploader-picker" data-file="file[]" data-type="file">
+                    <i class="layui-icon">&#xe67c;</i> 选择文件</a>
+                <div class="layui-row">
+                    <div class="layui-col-md12">
+                        <div class="layui-form-mid layui-word-aux">文件格式需為 pdf、doc、docx、xls、xlsx</div>
+                    </div>
+                </div>
+                <input type="hidden" class="form-control file" datatype="file" nullmsg="至少上传一张" errmsg="至少上传一张">
+            </div>
+        </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn layui-btn-sm" lay-filter="save" lay-submit>提交</button>
@@ -84,11 +108,12 @@
         </div>
     </form>
 </div>
+<script src="{{ ADMIN_JS }}/webuploader.own.js"></script>
 <script>
     var verify = { //自定義表單驗證規則
     };
 
-    layui.use(['form', 'layedit', 'upload'], function(){
+    layui.use(['form', 'layedit'], function(){
         var form = layui.form;
         var $ = layui.$;
         {{--var layedit = layui.layedit;--}}
@@ -99,56 +124,6 @@
         {{--    }--}}
         {{--});--}}
         {{--var content = layedit.build('content'); //初始化富文本id="content"--}}
-        var upload = layui.upload;
-
-        upload.render({ //实例化
-            elem: '.upload', //绑定元素
-            url: '{{ route('admin.upload.upload') }}',
-            data: { //额外参数
-                {{--thumb_w: {{ $img_thumb_with }},--}}
-            },
-            //field:'file', //文件域的字段名
-            multiple: true,
-            accept: 'images',
-            exts: 'jpg|jpeg|png|bmp', //限定上传類型
-            number: 3,//0为不限制上传数量
-            size: 1024 * 3,//文件最大可允许上传的大小，單位 KB 0=不限制
-            before: function(obj){
-                layer.msg('上傳中...', {icon: 16, shade: 0.01, time: 0});
-            },
-            done: function(res, index, upload){
-                var item = this.item;
-                var field = item.attr('id');
-                layer.close(layer.msg('上傳成功'));//关闭上传提示窗口
-                //上传完毕
-                $('.uploader-list.'+ field).append(
-                    '<div id="upload-'+ index +'" class="file-item">' +
-                    '   <div class="handle"><i class="layui-icon layui-icon-close"></i></div>' +
-                    '   <img class="layui-upload-img" style="width: 100px;height: 100px;" src="'+ res.data.filelink +'">' +
-                    '   <input type="hidden" name="'+ field +'[]" value="' + res.data.filename + '" />' +
-                    '   <div class="info"></div>' +
-                    '</div>'
-                );
-            },
-            error: function(){
-                //请求异常回调
-                layer.msg('上傳失敗');
-            }
-        });
-
-        //監聽鼠標事件
-        $(document).on("mouseenter mouseleave", ".file-item", function(event){
-            if(event.type === "mouseenter"){ //鼠标悬浮
-                $(this).children(".info").fadeIn("fast");
-                $(this).children(".handle").fadeIn("fast");
-            }else if(event.type === "mouseleave") { //鼠标离开
-                $(this).children(".info").hide();
-                $(this).children(".handle").hide();
-            }
-        });
-        $(document).on("click", ".file-item .handle", function(event){
-            $(this).parent().remove();
-        });
 
         form.verify({
             // content: function(value) { //數據异步提交未同步的原因，使用layedit.sync(index) 解决
@@ -174,7 +149,7 @@
             imageDir: 'image',
             thumbWidth: 0,
             thumbHeight: 0,
-            plugins: [''], //webuploadImage
+            plugins: ['webuploadImage'], //webuploadImage
             minHeight: '250px',
             maxHeight: '250px',
             lang: 'zh_cn'

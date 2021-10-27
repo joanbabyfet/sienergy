@@ -1,0 +1,117 @@
+/*文件上传*/
+.uploader-picker {
+    position: relative;
+}
+
+.uploader-picker div:last-child {
+    position: absolute;
+    top: -1px !important;
+    left: 0 !important;
+    width: 78px !important;
+    height: 34px !important;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.uploader-list {
+    padding-right: 10px;
+}
+
+.uploader-list {
+    overflow: hidden;
+}
+
+.uploader-list .img-item {
+    position: relative
+}
+
+.uploader-list .img-item .progress {
+    position: absolute;
+    left: 6px;
+    top: 39px;
+    z-index: 1;
+    display: block;
+    width: 90px;
+}
+
+.uploader-list .img-item i {
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    display: block;
+    line-height: 24px;
+    text-align: center;
+    background: rgba(00, 00, 00, 0.9);
+    border-radius: 99px;
+    font-size: 15px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
+
+.other-item i {
+    margin-left: 18px;
+    font-size: 14px;
+}
+
+/*文件上传--图片*/
+.uploader-group-img .uploader-list {
+    float: left;
+}
+
+.uploader-group-img .uploader-picker {
+    width: 100px;
+    height: 100px;
+    background: url("../img/addimage.png") no-repeat left center !important;
+    background-size: 100% 100%;
+    border: 1px solid #ccc !important;
+    padding: 0;
+    overflow: hidden;
+}
+
+.uploader-group-img .uploader-picker label {
+    position: absolute;
+    top: 0;
+}
+
+.uploader-group-img .uploader-picker:active,
+.uploader-group-img .uploader-picker:focus {
+    background: none;
+    border: none;
+    opacity: 1;
+}
+
+.uploader-group-img .webuploader-pick,
+.uploader-group-img .fa-upload,
+.uploader-group-img .uploader-picker div {
+    width: 100px !important;
+    height: 100px !important;
+    display: block;
+}
+
+.uploader-group-img .webuploader-pick {
+    opacity: 0;
+}
+
+.uploader-group-img .webuploader-element-invisible {
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+.form-control {
+    -webkit-appearance: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear, -webkit-box-shadow .25s linear;
+    -o-transition: box-shadow .25s linear, border .25s linear, color .25s linear, background-color .25s linear;
+    transition: border .25s linear, color .25s linear, background-color .25s linear, -webkit-box-shadow .25s linear;
+    transition: box-shadow .25s linear, border .25s linear, color .25s linear, background-color .25s linear;
+    transition: box-shadow .25s linear, border .25s linear, color .25s linear, background-color .25s linear, -webkit-box-shadow .25s linear;
+    -moz-appearance: none;
+}
+
+select.form-control {
+    padding-right: 30px;
+    background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAFCAYAAABB9hwOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiNWZkMzNlMC0zNTcxLTI4NDgtYjA3NC01ZTRhN2RjMWVmNjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTUxRUI3MDdEQjk4MTFFNUI1NDA5QTcyNTlFQzRERTYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTUxRUI3MDZEQjk4MTFFNUI1NDA5QTcyNTlFQzRERTYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ZWNiNjQzMjYtNDc1Yi01OTQxLWIxYjItNDVkZjU5YjZlODA2IiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6N2RlYzI2YWMtZGI5OC0xMWU1LWIwMjgtY2ZhNDhhOGNjNWY1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+AXTIGgAAAFRJREFUeNpidI1KSWFgYDBlwASngXjOrqWzGcgBTEC8DIjfo4m/h4qTDUAGfwPi+UD8Hyr2H8r/RqnBIHATiPdC2XuhfIoACxJ7PRDzQmmKAUCAAQDxOxHyb4DjOAAAAABJRU5ErkJggg==) no-repeat center right;
+}

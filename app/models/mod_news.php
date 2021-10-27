@@ -131,7 +131,7 @@ class mod_news extends mod_model
             $file_url_dis = [];
             foreach ($files as $file){
                 $file_dis[] = $file;
-                $file_url_dis[] = mod_display::img($file);
+                $file_url_dis[] = mod_display::img($file, 'doc');
             }
 
             if(isset($v['content']))
@@ -193,8 +193,12 @@ class mod_news extends mod_model
             $create_user  = $data_filter['create_user'];
             $update_user  = $data_filter['update_user'];
             $data_filter['content']  = mod_common::htmlentities($data_filter['content']);
-            $data_filter['img'] = empty($data_filter['img']) ? '':implode(',', $data_filter['img']);
-            $data_filter['file'] = empty($data_filter['file']) ? '':implode(',', $data_filter['file']);
+            //圖片
+            $img = empty($data_filter['img']) ? []: array_filter($data_filter['img']); //干掉空值
+            $data_filter['img'] = implode(',', $img);
+            //附件
+            $file = empty($data_filter['file']) ? []: array_filter($data_filter['file']); //干掉空值
+            $data_filter['file'] = implode(',', $file);
             //狀態
             $data_filter['status'] = ($data_filter['status'] === 'on') ? 1:0;
             unset($data_filter['do'], $data_filter['id'], $data_filter['create_user'], $data_filter['update_user']);

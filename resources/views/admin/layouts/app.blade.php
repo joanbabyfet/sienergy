@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ PLUGINS }}/laravel-layui-admin/lib/layui/css/layui.css">
     <link rel="stylesheet" href="{{ PLUGINS }}/laravel-layui-admin/css/admin.css">
     <link rel="stylesheet" href="{{ PLUGINS }}/redactor/css/redactor.css" />
+    <link rel="stylesheet" href="{{ ADMIN_CSS }}/style.css" />
+    <link rel="stylesheet" href="{{ ADMIN_CSS }}/font-awesome.min93e3.css" />
     @yield('style')
 </head>
 <body class="layui-layout-body">
@@ -41,6 +43,7 @@
 <script src="{{ PLUGINS }}/redactor/plugins/webuploadImage.js"></script>
 <script src="{{ PLUGINS }}/redactor/js/zh_cn.js"></script>
 <!-- REDACTOR End -->
+<script src="{{ PLUGINS }}/webuploader/webuploader.min.js"></script>
 @yield('script')
 <script>
     //JavaScript代碼区域
