@@ -29,7 +29,7 @@ php artisan sorage:link
 ```
 # Login Admin
 username: admin
-password: 123456
+password: Bb123456
 ```
 
 ## Change Log
