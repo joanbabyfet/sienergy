@@ -46,8 +46,8 @@ v1.0.0 - 2021-10-04
 v1.0.1 - 2021-10-27
 * pc端增加會員登入、註冊、忘記密碼、修改密碼功能
 * 增加登入页验证码
-* 上传组件改成 webuploader
-* 富文本编辑器改成 redactor
+* 上传组件改成 webuploader 组件
+* 富文本编辑器改成 redactor 组件 
 
 ## Maintainers
 Alan
