@@ -42,7 +42,7 @@ class cron_install extends Command
 
         //執行腳本,将任务放入异步队列中
         Artisan::call("key:generate");
-        Artisan::call("migrate:refresh --seed");
+        Artisan::call("migrate");
         Artisan::call("db:seed");
         Artisan::call("sorage:link");
 
