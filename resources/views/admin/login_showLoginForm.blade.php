@@ -34,6 +34,14 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-mid" style="color: #FAFAFA">驗證碼</label>
+                    <div class="layui-input-block">
+                        <input maxlength="4" size="8" name="captcha" id="captcha" type="text"
+                               required  lay-verify="required" placeholder="請輸入驗證碼" autocomplete="off" class="layui-input" />
+                        <img src="{{ captcha_src('flat') }}" style="cursor: pointer" onclick="this.src='{{ captcha_src('flat') }}'+Math.random()">
+                    </div>
+                </div>
+                <div class="layui-form-item">
                     <button type="submit" class="layui-btn" lay-submit lay-filter="login">立即登入</button>
                     <button type="button" id="forget_pwd" class="layui-btn layui-btn-primary">忘記密碼</button>
                 </div>

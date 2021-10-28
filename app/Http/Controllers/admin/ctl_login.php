@@ -111,4 +111,17 @@ class ctl_login extends Controller
         $credentials['status'] = 1; //已激活
         return $credentials;
     }
+
+    /**
+     * 重寫驗證規則
+     * @param Request $request
+     */
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+            'captcha' => 'required|captcha'
+        ]);
+    }
 }
