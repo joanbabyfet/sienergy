@@ -34,21 +34,21 @@
                                 @include('web.common.msg')
                                 {{ csrf_field() }}
                                 <div class="layui-form-item">
-                                    <label class="layui-form-label">用戶名</label>
+                                    <label class="layui-form-label label-required-next">用戶名</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="username" required  lay-verify="required" lay-verType=""
                                                placeholder="請輸入用戶名" autocomplete="off" class="layui-input">
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
-                                    <label class="layui-form-label">密碼</label>
+                                    <label class="layui-form-label label-required-next">密碼</label>
                                     <div class="layui-input-block">
                                         <input type="password" name="password" required lay-verify="required" lay-verType=""
                                                placeholder="請輸入密碼" autocomplete="off" class="layui-input">
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
-                                    <label class="layui-form-label">驗證碼</label>
+                                    <label class="layui-form-label label-required-next">驗證碼</label>
                                     <div class="layui-input-block">
                                         <input maxlength="4" size="8" name="captcha" id="captcha" type="text"
                                                required  lay-verify="required" placeholder="請輸入驗證碼" autocomplete="off" class="layui-input" />
