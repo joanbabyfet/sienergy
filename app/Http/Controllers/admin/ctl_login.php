@@ -122,6 +122,9 @@ class ctl_login extends Controller
             $this->username() => 'required|string',
             'password' => 'required|string',
             'captcha' => 'required|captcha'
+        ], [
+            'captcha.required' => '驗證碼不能為空',
+            'captcha.captcha' => '驗證碼不正確',
         ]);
     }
 }
