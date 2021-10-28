@@ -25,32 +25,41 @@
         </div>
         <div id="bodyMain">
             <div id="innerBodyMain">
-                <div id="pagePath"><a href="{{ route('web.index.index') }}">首頁</a><span class="side">&nbsp;</span>會員登入</div>
-                <div class="mainTitle titleBrand">會員登入</div>
+                <div id="pagePath"><a href="{{ route('web.index.index') }}">首頁</a><span class="side">&nbsp;</span>重設密碼</div>
+                <div class="mainTitle titleBrand">重設密碼</div>
                 <div id="mainContents">
                     <div class="layui-card">
                         <div class="layui-card-body ">
-                            <form class="layui-form" lay-filter="form-box" action="" method="POST">
+                            <form id="layer-form" class="layui-form" action="{{ route('web.password.update') }}" method="POST">
                                 @include('web.common.msg')
                                 {{ csrf_field() }}
+                                <input type="hidden" name="token" value="{{ $token }}">
                                 <div class="layui-form-item">
-                                    <label class="layui-form-label">用戶名</label>
+                                    <label class="layui-form-label label-required-next">郵箱:</label>
                                     <div class="layui-input-block">
-                                        <input type="text" name="username" required  lay-verify="required" lay-verType=""
-                                               placeholder="請輸入用戶名" autocomplete="off" class="layui-input">
+                                        <input type="text" name="email" value="" placeholder="請輸入郵箱"
+                                               class="layui-input" required lay-verify="required">
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
-                                    <label class="layui-form-label">密碼</label>
-                                    <div class="layui-input-block">
-                                        <input type="password" name="password" required lay-verify="required" lay-verType=""
-                                               placeholder="請輸入密碼" autocomplete="off" class="layui-input">
+                                    <label class="layui-form-label label-required-next">用戶密碼:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="password" name="password" value="" placeholder="請輸入用戶密碼"
+                                               class="layui-input" required lay-verify="required">
                                     </div>
+                                    <div class="layui-form-mid layui-word-aux">必須大於6位，包含大小寫字母和數字</div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label label-required-next">確認密碼:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="password" name="password_confirmation" value="" placeholder="請輸入確認密碼"
+                                               class="layui-input" required lay-verify="required|confirm_pass">
+                                    </div>
+                                    <div class="layui-form-mid layui-word-aux"></div>
                                 </div>
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
-                                        <button type="submit" class="layui-btn layui-btn-sm" lay-submit lay-filter="login">立即登入</button>
-                                        <button type="button" id="forget_password" class="layui-btn layui-btn-sm layui-btn-primary">忘記密碼</button>
+                                        <button class="layui-btn layui-btn-sm" lay-filter="save" lay-submit>提交</button>
                                     </div>
                                 </div>
                             </form>
@@ -72,11 +81,6 @@
             var $ = layui.$;
 
             form.on('submit(save)', function(data){
-            });
-
-            //忘記密碼
-            $('#forget_password').on('click', function (e) {
-                window.location = '{{ route('web.password.request') }}';
             });
         });
     </script>

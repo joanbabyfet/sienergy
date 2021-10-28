@@ -3,15 +3,16 @@
                        width="182" height="75" border="0" id="idxTopLogo"/>
         <div class="nav">
             <a href="{{ route('web.index.index') }}"{!! Request::is('/') ? ' class="current"':'' !!}>HOME</a><span class="side">&nbsp;</span>
-            <a href="#">English</a><span class="side">&nbsp;</span>
-            <a href="#">中文</a><span class="side">&nbsp;</span>
-            <a href="{{ route('web.links.index') }}"{!! Request::is('links') ? ' class="current"':'' !!}>友情鏈接</a>
-{{--            @guest($guard)--}}
-{{--                <a href="{{ route('web.login.showLoginForm') }}"{!! Request::is('links') ? ' class="current"':'' !!}>登入</a>--}}
-{{--            @endguest--}}
-{{--            @auth($guard)--}}
-{{--                <a href="{{ route('web.login.logout') }}"{!! Request::is('links') ? ' class="current"':'' !!}>{{ $curr_user['username'] }} 登出</a>--}}
-{{--            @endauth--}}
+{{--            <a href="#">English</a><span class="side">&nbsp;</span>--}}
+{{--            <a href="#">中文</a><span class="side">&nbsp;</span>--}}
+            <a href="{{ route('web.links.index') }}"{!! Request::is('links') ? ' class="current"':'' !!}>友情鏈接</a><span class="side">&nbsp;</span>
+            @guest($guard)
+                <a href="{{ route('web.login.showLoginForm') }}"{!! Request::is('links') ? ' class="current"':'' !!}>登入</a><span class="side">&nbsp;</span>
+                <a href="{{ route('web.member.showRegistrationForm') }}"{!! Request::is('links') ? ' class="current"':'' !!}>註冊</a>
+            @endguest
+            @auth($guard)
+                <a href="{{ route('web.login.logout') }}"{!! Request::is('links') ? ' class="current"':'' !!}>{{ $curr_user['username'] }} 登出</a>
+            @endauth
         </div>
     </div>
     <div id="HeaderNavIdx">

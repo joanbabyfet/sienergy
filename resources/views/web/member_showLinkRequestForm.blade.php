@@ -25,32 +25,24 @@
         </div>
         <div id="bodyMain">
             <div id="innerBodyMain">
-                <div id="pagePath"><a href="{{ route('web.index.index') }}">首頁</a><span class="side">&nbsp;</span>會員登入</div>
-                <div class="mainTitle titleBrand">會員登入</div>
+                <div id="pagePath"><a href="{{ route('web.index.index') }}">首頁</a><span class="side">&nbsp;</span>忘記密碼</div>
+                <div class="mainTitle titleBrand">忘記密碼</div>
                 <div id="mainContents">
                     <div class="layui-card">
                         <div class="layui-card-body ">
-                            <form class="layui-form" lay-filter="form-box" action="" method="POST">
+                            <form id="layer-form" class="layui-form" action="" method="POST">
                                 @include('web.common.msg')
                                 {{ csrf_field() }}
                                 <div class="layui-form-item">
-                                    <label class="layui-form-label">用戶名</label>
+                                    <label class="layui-form-label label-required-next">郵箱:</label>
                                     <div class="layui-input-block">
-                                        <input type="text" name="username" required  lay-verify="required" lay-verType=""
-                                               placeholder="請輸入用戶名" autocomplete="off" class="layui-input">
-                                    </div>
-                                </div>
-                                <div class="layui-form-item">
-                                    <label class="layui-form-label">密碼</label>
-                                    <div class="layui-input-block">
-                                        <input type="password" name="password" required lay-verify="required" lay-verType=""
-                                               placeholder="請輸入密碼" autocomplete="off" class="layui-input">
+                                        <input type="text" name="email" value="" placeholder="請輸入郵箱"
+                                               class="layui-input" required lay-verify="required">
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
-                                        <button type="submit" class="layui-btn layui-btn-sm" lay-submit lay-filter="login">立即登入</button>
-                                        <button type="button" id="forget_password" class="layui-btn layui-btn-sm layui-btn-primary">忘記密碼</button>
+                                        <button class="layui-btn layui-btn-sm" lay-filter="save" lay-submit>提交</button>
                                     </div>
                                 </div>
                             </form>
@@ -72,11 +64,15 @@
             var $ = layui.$;
 
             form.on('submit(save)', function(data){
-            });
-
-            //忘記密碼
-            $('#forget_password').on('click', function (e) {
-                window.location = '{{ route('web.password.request') }}';
+                $.post("{{ route("web.password.email") }}", data.field, function(response) {
+                    if (response.code === 0) {
+                        layui.layer.msg(response.msg, {time: 3000, icon: 6});
+                        window.location = "{{ route("web.password.request") }}";
+                    } else {
+                        layui.layer.msg(response.msg, {time: 3000, icon: 5});
+                    }
+                });
+                return false;
             });
         });
     </script>
