@@ -11,6 +11,7 @@
                 <a href="{{ route('web.member.showRegistrationForm') }}"{!! Request::is('links') ? ' class="current"':'' !!}>註冊</a>
             @endguest
             @auth($guard)
+                <a href="{{ route('web.change_pwd.edit') }}"{!! Request::is('links') ? ' class="current"':'' !!}>修改密碼</a><span class="side">&nbsp;</span>
                 <a href="{{ route('web.login.logout') }}"{!! Request::is('links') ? ' class="current"':'' !!}>{{ $curr_user['username'] }} 登出</a>
             @endauth
         </div>

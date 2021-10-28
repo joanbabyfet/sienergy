@@ -31,6 +31,19 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label label-required-next">手機號:</label>
+            <div class="layui-input-inline" style="width: 100px;">
+                <select name="phone_code" lay-verify="required">
+                    <option value=""></option>
+                    {!! make_options($mobile_prefix_options, $row['phone_code']) !!}
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <input type="text" name="phone" value="{{ $row['phone'] }}" placeholder="請輸入聯絡電話"
+                       class="layui-input" required lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label label-required-next">會員等級:</label>
             <div class="layui-input-block">
 {{--                @foreach($roles as $role)--}}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\models\mod_admin_user_oplog;
+use App\models\mod_country;
 use App\models\mod_user;
 use App\models\mod_array;
 use App\models\mod_common;
@@ -100,10 +101,13 @@ class ctl_member extends Controller
                 'order_by' => ['created_at', 'asc'],
             ]);
             $roles = mod_array::one_array($roles, ['id', 'name']);
+            //获取手机国码
+            $mobile_prefix_options = mod_country::get_mobile_prefix();
 
             return view('admin.member_edit', [
                 'row'   =>  $row,
                 'roles' =>  $roles,
+                'mobile_prefix_options' => $mobile_prefix_options,
             ]);
         }
     }
@@ -120,6 +124,8 @@ class ctl_member extends Controller
             'password'      => $request->input('password'),
             'realname'      => $request->input('realname'),
             'email'         => $request->input('email', ''),
+            'phone_code'    => $request->input('phone_code', ''),
+            'phone'         => $request->input('phone', ''),
             'role_id'       => $request->input('role_id') ??
                             config('global.gen_mem_role_id'),
             'create_user'   => $this->uid,
