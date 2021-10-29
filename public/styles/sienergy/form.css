@@ -36,3 +36,14 @@ select { border:#b8b8b8 1px solid; padding:4px 2px; color:#333; font-size:12px; 
 .width200 { width:200px;}
 .width260 { width:260px;}
 .width300 { width:300px;}
+
+.label-required-next:after {
+    top: 6px;
+    right: 5px;
+    color: red;
+    content: '*';
+    position: absolute;
+    margin-left: 4px;
+    font-weight: 700;
+    line-height: 1.8em;
+}

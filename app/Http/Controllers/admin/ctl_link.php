@@ -82,7 +82,9 @@ class ctl_link extends Controller
         }
         else
         {
-            return view('admin.link_add', []);
+            return view('admin.link_add', [
+                'img_thumb_with'    =>  mod_link::$img_thumb_with,
+            ]);
         }
     }
 
@@ -108,6 +110,7 @@ class ctl_link extends Controller
 
             return view('admin.link_edit', [
                 'row'   =>  $row,
+                'img_thumb_with'    =>  mod_link::$img_thumb_with,
             ]);
         }
     }
@@ -123,7 +126,7 @@ class ctl_link extends Controller
             'name'          => $request->input('name'),
             'name_en'       => $request->input('name_en'),
             'url'           => $request->input('url'),
-            'img'           => $request->input('img'),
+            'img'           => $request->input('img', []),
             'status'        => $request->input('status', 0),
             'create_user'   => $this->uid,
             'update_user'   => $this->uid,

@@ -34,54 +34,54 @@
                 <div id="mainContents">
                     <form id="Form" class="layui-form" action="" method="POST">
                         {{ csrf_field() }}
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="formTable">
-                        <tr>
-                            <th width="100">公司名稱：</th>
-                            <td><input name="company_name" type="text" class="text width160"
-                                       id="company_name" maxlength="30"/></td>
-                        </tr>
-                        <tr>
-                            <th><span class="required">姓名：</span></th>
-                            <td><input name="name" type="text" class="text width160"
-                                       id="name" required  lay-verify="required" maxlength="20"/></td>
-                        </tr>
-                        <tr>
-                            <th><span class="required">性別：</span></th>
-                            <td><input type="radio" name="sex" id="sex" value="1" title="男" checked/>
-                                <input type="radio" name="sex" id="sex" value="0" title="女"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th><span class="required">電子郵件：</span></th>
-                            <td><input name="email" type="text" class="text width300" id="email"
-                                       required  lay-verify="required" maxlength="50"/>
-                                <br/></td>
-                        </tr>
-                        <tr>
-                            <th>聯絡電話：</th>
-                            <td><input name="phone" type="text" class="text width160"
-                                       id="phone" maxlength="10"/></td>
-                        </tr>
-                        <tr>
-                            <th><span class="required">驗證碼：</span></th>
-                            <td>
-                                <img src="{{ captcha_src('flat') }}" style="cursor: pointer" onclick="this.src='{{ captcha_src('flat') }}'+Math.random()">
-                                <br/>
-                                <input maxlength="4" size="8" name="captcha" id="captcha" type="text"
-                                       required  lay-verify="required" value=""/></td>
-                        </tr>
-                        <tr>
-                            <th><span class="required">您的意見：</span></th>
-                            <td><textarea name="content" cols="45" rows="5" class="form-textarea"
-                                          id="content" required  lay-verify="required"></textarea></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td>
-                                <input type="image" name="submit" alt="Submit" lay-submit lay-filter="save" src="/images/icon-sent.png" style="border-width:0px;"/>
-                            </td>
-                        </tr>
-                    </table>
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="formTable">
+                            <tr>
+                                <th width="100">公司名稱：</th>
+                                <td><input name="company_name" type="text" class="text width160"
+                                           id="company_name" maxlength="30"/></td>
+                            </tr>
+                            <tr>
+                                <th><span class="required">姓名：</span></th>
+                                <td><input name="name" type="text" class="text width160"
+                                           id="name" required  lay-verify="required" maxlength="20"/></td>
+                            </tr>
+                            <tr>
+                                <th><span class="required">性別：</span></th>
+                                <td><input type="radio" name="sex" id="sex" value="1" title="男" checked/>
+                                    <input type="radio" name="sex" id="sex" value="0" title="女"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><span class="required">電子郵件：</span></th>
+                                <td><input name="email" type="text" class="text width300" id="email"
+                                           required  lay-verify="required" maxlength="50"/>
+                                    <br/></td>
+                            </tr>
+                            <tr>
+                                <th>聯絡電話：</th>
+                                <td><input name="phone" type="text" class="text width160"
+                                           id="phone" maxlength="10"/></td>
+                            </tr>
+                            <tr>
+                                <th><span class="required">驗證碼：</span></th>
+                                <td>
+                                    <img src="{{ captcha_src('flat') }}" style="cursor: pointer" onclick="this.src='{{ captcha_src('flat') }}'+Math.random()">
+                                    <br/>
+                                    <input maxlength="4" size="8" name="captcha" id="captcha" type="text"
+                                           required  lay-verify="required" value=""/></td>
+                            </tr>
+                            <tr>
+                                <th><span class="required">您的意見：</span></th>
+                                <td><textarea name="content" cols="45" rows="5" class="form-textarea"
+                                              id="content" required  lay-verify="required"></textarea></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input type="image" name="submit" alt="Submit" lay-submit lay-filter="save" src="/images/icon-sent.png" style="border-width:0px;"/>
+                                </td>
+                            </tr>
+                        </table>
                     </form>
                 </div>
             </div>

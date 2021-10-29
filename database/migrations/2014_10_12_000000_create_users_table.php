@@ -17,10 +17,12 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->char('id',32)->default('')->comment('用戶id');
             $table->tinyInteger("origin")->default(1)->nullable()->comment('注册来源');
-            $table->string('realname',50)->default('')->nullable()->comment('姓名');
-            $table->string('email', 100)->default('')->nullable()->comment('信箱');
             $table->string('username', 20)->default('')->nullable()->comment("用户帐号");
             $table->string('password', 60)->default('')->nullable()->comment("用户密码");
+            $table->string('realname',50)->default('')->nullable()->comment('姓名');
+            $table->string('email', 100)->default('')->nullable()->comment('信箱');
+            $table->string('phone_code', 5)->default('')->nullable()->comment('手機號國碼');
+            $table->string('phone', 20)->default('')->nullable()->comment('手機號');
             $table->tinyInteger("status")->default(1)->nullable()->comment('帐号状态 1:正常 0:禁止登陆');
             $table->tinyInteger('is_first_login')->default(1)->nullable()->comment('是否首次登录');
             $table->tinyInteger('is_audit')->default(0)->nullable()->comment('登陆是否需要后台进行人工审核 0: 不需要 1:需要');

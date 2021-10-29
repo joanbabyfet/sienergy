@@ -279,14 +279,14 @@ function getfile(url, data, search_str, file, _page_no, index)
                         layui.layer.close(index);
                         openwin(res.data.excel_file);
                     }, 1000); //毫秒
-                    return;
                 }else{
                     _page_no++;
                     getfile(url, data, search_str, file, _page_no, index);
                 }
             }
             else {
-                layui.layer.msg(res.msg, {time: 2000, icon: 5});
+                layui.layer.msg('匯出數據出錯', {time: 2000});
+                layui.layer.close(index);
             }
         }
     });

@@ -155,7 +155,9 @@ class mod_link extends mod_model
             $id    = $data_filter['id'];
             $create_user  = $data_filter['create_user'];
             $update_user  = $data_filter['update_user'];
-            $data_filter['img'] = empty($data_filter['img']) ? '':implode(',', $data_filter['img']);
+            //圖片
+            $img = empty($data_filter['img']) ? []: array_filter($data_filter['img']); //干掉空值
+            $data_filter['img'] = implode(',', $img);
             //狀態
             $data_filter['status'] = ($data_filter['status'] === 'on') ? 1:0;
 

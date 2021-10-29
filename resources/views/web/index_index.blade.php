@@ -31,7 +31,7 @@
             </div>
             <ul>
                 @foreach($news as $v)
-                <li><a href="{{ route('web.news.detail').'?id='.$v['id'] }}">{{ $v['title'] }}</a>
+                <li><a href="{{ route('web.news.detail').'?id='.$v['id'] }}">{{ str_limit($v['title'], 60) }}</a>
                     @if($v['is_hot'])
                     <img src="/styles/sienergy/images/iconNewsHot.gif" width="17" height="5" align="texttop"/>
                     @endif

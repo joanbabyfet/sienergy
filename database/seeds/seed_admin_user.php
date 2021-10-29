@@ -34,7 +34,7 @@ class seed_admin_user extends Seeder
         ];
 
         $rows = [
-            ['1', '管理員', 'admin@gmail.com', 'admin', bcrypt('123456'), 1, '', 1, 0, 1440, '', '', 0, '', '', '', time(), '0'],
+            ['1', '管理員', 'admin@gmail.com', 'admin', bcrypt('Bb123456'), 1, '', 1, 0, 1440, '', '', 0, '', '', '', time(), '0'],
         ];
 
         $insert_data = [];
