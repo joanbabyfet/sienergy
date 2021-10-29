@@ -2,10 +2,12 @@
 
 namespace App\models;
 
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -45,6 +47,8 @@ class mod_user extends Authenticatable implements JWTSubject
     ];
     //允许批量注入字段 $post = Post::create($request->all());
     protected $fillable = [
+        'id', 'origin', 'username', 'password', 'realname', 'email',
+        'phone_code', 'phone', 'reg_ip', 'language', 'create_user'
     ];
     //返回不含以下字段 auth('web')->user()
     protected $hidden = [
@@ -58,6 +62,7 @@ class mod_user extends Authenticatable implements JWTSubject
         1 => '官网',
         2 => '用户端APP',
     ];
+    public static $return_data; //返回整个会员对象
 
     protected function list_data(array $conds)
     {
@@ -72,20 +77,27 @@ class mod_user extends Authenticatable implements JWTSubject
         $next_page  = $conds['next_page'] ?? null;
         //用戶名
         $username       = !empty($conds['username']) ? $conds['username']:'';
+        //用戶id
+        $id       = !empty($conds['id']) ? $conds['id']:[];
         $status     = $conds['status'] ?? null;
+        $date1 = empty($conds['date1']) ? '' :mod_common::date_convert_timestamp("{$conds['date1']} 00:00:00", mod_common::get_admin_timezone());
+        $date2   = empty($conds['date2']) ? '' :mod_common::date_convert_timestamp("{$conds['date2']} 23:59:59", mod_common::get_admin_timezone());
 
         $where = [];
         $where[] = ['delete_time', '=', 0];
         //搜加密字段
         $username and $where[] = ['username', 'like', "%{$username}%"];
         is_numeric($status) and $where[] = ['status', '=', $status];
+        $id and $where[] = ['id', 'in', $id];
+        $date1 and $where[] = ['create_time', '>=', $date1]; //开始时间
+        $date2 and $where[] = ['create_time', '<=', $date2]; //结束时间
 
         $order_by = !empty($order_by) ? $order_by : ['create_time', 'desc'];
         $group_by = !empty($group_by) ? $group_by : [];
 
         $rows = mod_model::get_list([
             'table'     => $this->table,
-            'fields'    => ['id', 'realname', 'username', 'email',
+            'fields'    => ['id', 'realname', 'username', 'email', 'phone', 'language',
                 'status', 'login_time', 'login_ip', 'create_user', 'create_time'
             ],
             'where'     => $where,
@@ -179,12 +191,16 @@ class mod_user extends Authenticatable implements JWTSubject
             'id'                => $do == 'edit' ? 'required' : '',
             'username'          => in_array($do, ['edit']) ? '' : 'required',
             'password'          => $do == 'edit'  ? '' : 'required',
+            'origin'            => '', //來源
             'realname'          => '',
             'role_id'           => '',
             'email'             => '',
+            'phone_code'        => '',
+            'phone'             => '',
             'reg_ip'            => '',
             'login_time'        => '',
             'login_ip'          => '',
+            'language'          => '',
             'create_user'       => '',
             'update_user'       => '',
         ], $data);
@@ -235,6 +251,8 @@ class mod_user extends Authenticatable implements JWTSubject
                     $user = self::find($data_filter['id']);
                     $user->syncRoles($role_id);
                 }
+
+                self::$return_data = self::find($data_filter['id']);
             }
             elseif($do == 'edit')
             {
@@ -437,5 +455,24 @@ class mod_user extends Authenticatable implements JWTSubject
             return '';
         }
         return $user->id;
+    }
+
+    //所属用戶角色, 使用方式 mod_user::find('xxx')->role_maps, model_has_roles為中介表
+    //withPivot要返回中介表其他字段,因默認只返回鍵
+    public function role_maps()
+    {
+        return $this->belongsToMany('App\models\mod_role', 'model_has_roles', 'model_id', 'role_id')
+            ->withPivot('role_id', 'model_type', 'model_id');
+    }
+
+    /**
+     * 發送密碼重設通知。
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
     }
 }

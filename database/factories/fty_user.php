@@ -13,7 +13,7 @@ $factory->define(mod_user::class, function (Faker $faker) {
         'realname' => $faker->name,
         'email' => $faker->safeEmail,
         'username' => $faker->unique()->userName,
-        'password' => bcrypt('123456'),
+        'password' => bcrypt('Bb123456'),
         'status' => 1,
         'is_first_login' => 1,
         'is_audit' => 0,

@@ -22,32 +22,28 @@
         <div class="layui-form-item">
             <label class="layui-form-label">封面圖片:</label>
             <div class="layui-input-block">
-                <div class="layui-upload-list uploader-list img">
+                <!--用来存放文件信息-->
+                <div class="uploader-list">
                     @foreach($row['img_dis'] as $k => $v)
-                        <div id="" class="file-item">
-                            <div class="handle"><i class="layui-icon layui-icon-close"></i></div>
-                            <img style="width: 100px;height: 100px;" src="{{ $row['img_url_dis'][$k] }}">
-                            <input type="hidden" name="img[]" value="{{ $v }}" />
-                            <div class="info"></div>
+                        <div id="WU_FILE_{{ $k + 10 }}" class="item img-item pull-left" style="margin-bottom:10px;margin-right:10px;">
+                            <img style="width:100px;height:100px;" src="{{ $row['img_url_dis'][$k] }}">
                         </div>
                     @endforeach
                 </div>
             </div>
         </div>
-{{--        <div class="layui-form-item">--}}
-{{--            <label class="layui-form-label">附件上傳:</label>--}}
-{{--            <div class="layui-input-block">--}}
-{{--                <div class="layui-upload-list uploader-list file">--}}
-{{--                    @foreach($row['file_dis'] as $k => $v)--}}
-{{--                        <div id="" class="file-item">--}}
-{{--                            <div class="handle"><i class="layui-icon layui-icon-close"></i></div>--}}
-{{--                            <img class="layui-upload-img" style="width: 100px;height: 100px;" src="{{ $row['file_url_dis'][$k] }}">--}}
-{{--                            <input type="hidden" name="file[]" value="{{ $v }}" />--}}
-{{--                            <div class="info"></div>--}}
-{{--                        </div>--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        <div class="layui-form-item">
+            <label class="layui-form-label">附件上傳:</label>
+            <div class="layui-input-block">
+                <!--用来存放文件信息-->
+                <div class="uploader-list">
+                    @foreach($row['file_dis'] as $k => $v)
+                        <div id="WU_FILE_{{ $k + 10 }}" class="item img-item pull-left" style="margin-bottom:10px;margin-right:10px;">
+                            <p class="form-control-static"><a href="{{ $row['file_url_dis'][$k] }}" target="_blank">{{ $v }}</a></p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
     </form>
 </div>

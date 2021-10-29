@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call(seed_permission_groups::class);
         $this->call(seed_permissions::class);
         $this->call(seed_navigation::class);
+        $this->call(seed_country::class);
+        $this->call(seed_area::class);
+        $this->call(seed_currency_type::class);
+
         //$this->call(seed_example::class);
         //$this->call(seed_fak_example::class);
         //$this->call(seed_fak_admin_user::class);
