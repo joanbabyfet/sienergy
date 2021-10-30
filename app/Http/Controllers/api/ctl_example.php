@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\api;
 
-use App\models\mod_admin_user_oplog;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\models\mod_common;
 use App\models\mod_example;
 use App\models\mod_news_cat;
-use App\models\mod_redis;
 
 class ctl_example extends Controller
 {

@@ -72,7 +72,7 @@ class Controller extends BaseController
         $method = 'action_'.$action;
         if (method_exists($this, $method))
         {
-            $res = App::call([$this, $method], [
+            $res = app()->call([$this, $method], [
                 'request' => $request
             ]);
             return $res;

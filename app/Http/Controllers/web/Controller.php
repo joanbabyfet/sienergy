@@ -38,7 +38,7 @@ class Controller extends BaseController
             {
                 $this->lang = mod_req::get_language();
             }
-            App::setLocale($this->lang); //设置语言
+            app()->setLocale($this->lang); //设置语言
             $this->timezone = mod_req::get_timezone();
 
             if(auth($guard)->check()) //确认当前用户是否通过认证
