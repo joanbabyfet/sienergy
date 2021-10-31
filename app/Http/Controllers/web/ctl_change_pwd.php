@@ -29,7 +29,7 @@ class ctl_change_pwd extends Controller
             }
 
             $status = mod_user::save_data([
-                'do'            => $request->route()->getActionMethod(),
+                'do'            => mod_common::get_action(),
                 'id'            => $request->input('id'),
                 'password'      => $request->input('password'),
                 'update_user'   => $this->uid,

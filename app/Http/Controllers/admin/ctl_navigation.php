@@ -34,7 +34,7 @@ class ctl_navigation extends Controller
             'order_by'      => ['sort', 'asc'],
         ]);
 
-        if($request->route()->getActionMethod() == 'export_list') //獲取調用方法名
+        if(mod_common::get_action() == 'export_list') //獲取調用方法名
         {
 
         }
@@ -110,7 +110,7 @@ class ctl_navigation extends Controller
     private function save(Request $request)
     {
         $status = mod_navigation::save_data([
-            'do'            => $request->route()->getActionMethod(),
+            'do'            => mod_common::get_action(),
             'id'            => $request->input('id'),
             'parent_id'     => $request->input('parent_id'),
             'icon'          => $request->input('icon'),

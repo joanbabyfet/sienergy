@@ -183,7 +183,8 @@ class mod_common extends Model
      */
     public static function password_hash($password)
     {
-        return bcrypt($password);
+        //return bcrypt($password);
+        return app('hash')->make($password);
     }
 
     /**
@@ -979,5 +980,25 @@ class mod_common extends Model
         }
 
         return $data;
+    }
+
+    /**
+     * 获取当前地址的Action
+     * @return mixed
+     */
+    public static function get_action()
+    {
+        return  request()->route()->getActionMethod();
+    }
+
+    /**
+     * 获取当前地址的Action
+     *
+     * @return mixed
+     */
+    public static function get_controller()
+    {
+        //return class_basename(request()->route()->getController()); //只有名称ctl_faq
+        return get_class(request()->route()->getController()); //含路径App\Http\Controllers\admin\ctl_faq
     }
 }
