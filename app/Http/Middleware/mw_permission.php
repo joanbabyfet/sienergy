@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\models\mod_admin_user;
 use Closure;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Exceptions\UnauthorizedException;
