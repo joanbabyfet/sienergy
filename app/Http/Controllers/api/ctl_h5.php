@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\api;
 
-use App\models\mod_common;
 use App\models\mod_h5;
 use Illuminate\Http\Request;
 

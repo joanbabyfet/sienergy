@@ -23,7 +23,7 @@ class ctl_example extends Controller
     //列表
     public function index(Request $request)
     {
-        $page_size = ($request->route()->getActionMethod() == 'export_list') ?
+        $page_size = (mod_common::get_action() == 'export_list') ?
             100 : $request->input('limit', 10);
         $page_no    = $request->input('page', 1);
         $page_no = !empty($page_no) ? $page_no : 1;
@@ -40,7 +40,7 @@ class ctl_example extends Controller
         //分頁顯示, 是否有下一页 $pages->hasMorePages()
         $pages = mod_common::pages($rows['total'], $page_size);
 
-        if($request->route()->getActionMethod() == 'export_list') //獲取調用方法名
+        if(mod_common::get_action() == 'export_list') //獲取調用方法名
         {
             $titles = [
                 'title'             =>'標題',
@@ -128,7 +128,7 @@ class ctl_example extends Controller
     private function save(Request $request)
     {
         $status = mod_example::save_data([
-            'do'        => $request->route()->getActionMethod(),
+            'do'        => mod_common::get_action(),
             'id'        => $request->input('id'),
             'title'     => $request->input('title'),
             'content'    => $request->input('content', ''),

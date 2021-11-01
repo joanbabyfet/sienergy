@@ -25,7 +25,7 @@ class ctl_member extends Controller
     //列表
     public function index(Request $request)
     {
-        $page_size = ($request->route()->getActionMethod() == 'export_list') ?
+        $page_size = (mod_common::get_action() == 'export_list') ?
             100 : $request->input('limit', 10);
         $page_no    = $request->input('page', 1);
         $page_no = !empty($page_no) ? $page_no : 1;
@@ -42,7 +42,7 @@ class ctl_member extends Controller
         //分頁顯示
         $pages = mod_common::pages($rows['total'], $page_size);
 
-        if($request->route()->getActionMethod() == 'export_list') //獲取調用方法名
+        if(mod_common::get_action() == 'export_list') //獲取調用方法名
         {
             $titles = [
                 'username'          =>'用戶名',
@@ -118,7 +118,7 @@ class ctl_member extends Controller
     private function save(Request $request)
     {
         $status = mod_user::save_data([
-            'do'            => $request->route()->getActionMethod(),
+            'do'            => mod_common::get_action(),
             'id'            => $request->input('id'),
             'username'      => $request->input('username'),
             'password'      => $request->input('password'),

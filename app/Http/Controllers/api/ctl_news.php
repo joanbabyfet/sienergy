@@ -35,7 +35,7 @@ class ctl_news extends Controller
         //分頁顯示
         $pages = mod_common::pages($rows['total'], $page_size);
 
-        if ($request->route()->getActionMethod() == 'export_list') //獲取調用方法名
+        if (mod_common::get_action() == 'export_list') //獲取調用方法名
         {
 
         }
