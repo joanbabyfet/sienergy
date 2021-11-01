@@ -22,7 +22,7 @@ class ctl_report extends Controller
      */
     public function member_increase_data(Request $request)
     {
-        $page_size = ($request->route()->getActionMethod() == 'export_list') ?
+        $page_size = (mod_common::get_action() == 'export_list') ?
             100 : $request->input('limit', 10);
         $page_no    = $request->input('page', 1);
         $page_no = !empty($page_no) ? $page_no : 1;
@@ -46,7 +46,7 @@ class ctl_report extends Controller
         //分頁顯示
         $pages = mod_common::pages($rows['total'], $page_size);
 
-        if($request->route()->getActionMethod() == 'export_list') //獲取調用方法名
+        if(mod_common::get_action() == 'export_list') //獲取調用方法名
         {
             $titles = [
                 'date'                  =>'日期',

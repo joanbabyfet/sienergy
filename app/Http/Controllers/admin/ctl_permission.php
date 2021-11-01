@@ -49,7 +49,7 @@ class ctl_permission extends Controller
         //分頁顯示
         $pages = mod_common::pages($rows['total'], $page_size);
 
-        if($request->route()->getActionMethod() == 'export_list') //獲取調用方法名
+        if(mod_common::get_action() == 'export_list') //獲取調用方法名
         {
             $titles = [
                 'name'                  =>'權限名稱',
@@ -155,7 +155,7 @@ class ctl_permission extends Controller
     private function save(Request $request)
     {
         $status = mod_permission::save_data([
-            'do'            => $request->route()->getActionMethod(),
+            'do'            => mod_common::get_action(),
             'id'            => $request->input('id'),
             'name'          => $request->input('name'),
             'display_name'  => $request->input('display_name'),

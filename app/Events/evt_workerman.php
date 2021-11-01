@@ -84,9 +84,9 @@ class evt_workerman
 
         $ctl = empty($req_data['ct']) ? '' : 'ctl_'.$req_data['ct'];
         $request = new Request($req_data);//发送数据
-        $controller = App::make("App\Http\Controllers\socket\\".$ctl); //從容器解析型別
+        $controller = app()->make("App\Http\Controllers\socket\\".$ctl); //從容器解析型別
         //调用请求接口,先到处理入口
-        App::call([$controller, 'handle'], [
+        app()->call([$controller, 'handle'], [
             'request' => $request
         ]);
 

@@ -31,7 +31,7 @@ class Controller extends BaseController
         $this->middleware(function ($request, $next) use($guard) //过中间件才会执行
         {
             $this->lang = mod_req::get_language();
-            App::setLocale($this->lang); //设置语言
+            app()->setLocale($this->lang); //设置语言
             $this->timezone = mod_req::get_admin_timezone(); //获取需要转化的时区
             $navigation = [];
 

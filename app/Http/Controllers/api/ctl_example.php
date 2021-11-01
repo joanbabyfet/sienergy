@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\api;
 
-use App\models\mod_admin_user_oplog;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\models\mod_common;
 use App\models\mod_example;
 use App\models\mod_news_cat;
-use App\models\mod_redis;
 
 class ctl_example extends Controller
 {
@@ -87,7 +84,7 @@ class ctl_example extends Controller
         //分頁顯示
         $pages = mod_common::pages($rows['total'], $page_size);
 
-        if ($request->route()->getActionMethod() == 'export_list') //獲取調用方法名
+        if (mod_common::get_action() == 'export_list') //獲取調用方法名
         {
             $titles = [
                 'title'             =>'標題',
@@ -359,7 +356,7 @@ class ctl_example extends Controller
     private function save(Request $request)
     {
         $status = mod_example::save_data([
-            'do'        => $request->route()->getActionMethod(),
+            'do'        => mod_common::get_action(),
             'id'        => $request->input('id'),
             'title'     => $request->input('title'),
             'content'    => $request->input('content', ''),

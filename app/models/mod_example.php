@@ -4,7 +4,6 @@ namespace App\models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Validator;
 
 class mod_example extends mod_model
 {
