@@ -4,6 +4,7 @@
 /storage/framework/sessions/*
 /storage/framework/views/*
 /storage/logs/*
+/storage/backup
 /vendor
 .env
 composer.lock

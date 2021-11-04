@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\cron_example::class,
         \App\Console\Commands\cron_test_mail::class,
         \App\Console\Commands\cron_generate_member_increase_data::class,
+        \App\Console\Commands\cron_backup_db::class,
     ];
 
     /**
