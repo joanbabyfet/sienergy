@@ -29,30 +29,30 @@ class Kernel extends ConsoleKernel
     {
         //每分钟 withoutOverlapping 上文件锁防止相同脚本未结束时重覆调用
         //runInBackground 会干掉重覆脚本
-        //$schedule->command('cron:xxx')->everyMinute()->withoutOverlapping()->runInBackground();
-        $schedule->command('cron:test_mail')->everyMinute()->withoutOverlapping();
-        $schedule->command('cron:collect_news')->everyMinute()->withoutOverlapping();
+        //$schedule->command('name:action')->everyMinute()->withoutOverlapping()->runInBackground();
+        $schedule->command('mail:test')->everyMinute()->withoutOverlapping();
+        $schedule->command('news:collect')->everyMinute()->withoutOverlapping();
 
         //每天一点
-        //$schedule->command('cron:xxx')->dailyAt('01:00')->withoutOverlapping()->runInBackground();
+        //$schedule->command('name:action')->dailyAt('01:00')->withoutOverlapping()->runInBackground();
 
         //每小时
-        //$schedule->command('cron:xxx')->hourly()->withoutOverlapping()->runInBackground();
+        //$schedule->command('name:action')->hourly()->withoutOverlapping()->runInBackground();
 
         //每小时 某分
-        //$schedule->command('cron:xxx')->hourlyAt(30)->withoutOverlapping()->runInBackground();
+        //$schedule->command('name:action')->hourlyAt(30)->withoutOverlapping()->runInBackground();
 
         //每天 某时:某分
-        //$schedule->command('cron:xxx')->dailyAt('11:00')->withoutOverlapping()->runInBackground();
+        //$schedule->command('name:action')->dailyAt('11:00')->withoutOverlapping()->runInBackground();
 
         //每周-某天 某时:某分 day=1为周一
-        //$schedule->command('cron:xxx')->weeklyOn(3, '01:30')->withoutOverlapping()->runInBackground();
+        //$schedule->command('name:action')->weeklyOn(3, '01:30')->withoutOverlapping()->runInBackground();
 
         //每月-某天 某时:某分 day=1为一号
-        //$schedule->command('cron:xxx')->monthlyOn(1, '01:00')->withoutOverlapping()->runInBackground();
+        //$schedule->command('name:action')->monthlyOn(1, '01:00')->withoutOverlapping()->runInBackground();
 
         //每年 某月-某日 某时-某分
-        //$schedule->command('cron:xxx')->cron('00 22 25 12 *')->withoutOverlapping()->runInBackground();
+        //$schedule->command('name:action')->cron('00 22 25 12 *')->withoutOverlapping()->runInBackground();
 
     }
 
