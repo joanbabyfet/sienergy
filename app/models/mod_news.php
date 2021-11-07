@@ -28,7 +28,7 @@ class mod_news extends mod_model
         self::ENABLE    => '啟用'
     ];
     //封面图压缩宽度
-    public static $img_thumb_with = 100;
+    public static $img_thumb_with = 750;
 
     protected function list_data(array $conds)
     {
