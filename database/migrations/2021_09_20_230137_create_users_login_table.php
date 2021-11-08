@@ -25,6 +25,8 @@ class CreateUsersLoginTable extends Migration
             $table->string('login_country',2)->default('')->nullable()->comment('登入國家');
             $table->tinyInteger('status')->default(0)->nullable()->comment('登录时状态 1=成功，0=失败');
             $table->string('cli_hash',32)->default('')->nullable()->comment('用户登录名和ip的hash');
+            $table->index('username');
+            $table->index('login_time');
         });
         $table = DB::getTablePrefix().'users_login';
         DB::statement("ALTER TABLE `{$table}` comment'會員登入日志表'"); // 表注释

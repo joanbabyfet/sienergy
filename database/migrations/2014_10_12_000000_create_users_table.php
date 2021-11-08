@@ -41,6 +41,7 @@ class CreateUsersTable extends Migration
             $table->integer('delete_time')->default(0)->nullable()->comment("刪除時間");
             $table->char('delete_user', 32)->default('0')->nullable()->comment("刪除人");
             $table->primary(['id']);
+            $table->index('username');
         });
         $table = DB::getTablePrefix().'users';
         DB::statement("ALTER TABLE `{$table}` comment'會員表'"); // 表注释

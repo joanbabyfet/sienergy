@@ -2,6 +2,7 @@
 
 namespace App\models;
 
+use App\Imports\imp_user;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -9,6 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -58,9 +60,9 @@ class mod_user extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
     public static $origin_map = [
-        0 => '其他',
-        1 => '官网',
-        2 => '用户端APP',
+        0 => '其他', //后台汇入
+        1 => '官网', //pc端
+        2 => 'APP',
     ];
     public static $return_data; //返回整个会员对象
 
@@ -206,7 +208,7 @@ class mod_user extends Authenticatable implements JWTSubject
         ], $data);
 
         //开启事务
-        DB::beginTransaction();
+        //DB::beginTransaction();
         $status = 1;
         try
         {
@@ -216,7 +218,7 @@ class mod_user extends Authenticatable implements JWTSubject
             }
 
             $do         = $data_filter['do'];
-            $id         = $data_filter['id'];
+            $id         = $data_filter['id'] ?? '';
             $username   = $data_filter['username'] ?? '';
             $password   = $data_filter['password'] ?? '';
             $create_user  = $data_filter['create_user'] ?? '';
@@ -284,14 +286,14 @@ class mod_user extends Authenticatable implements JWTSubject
             ]);
         }
 
-        if ($status > 0)
-        {
-            DB::commit();   //手動提交事务
-        }
-        else
-        {
-            DB::rollback(); //手動回滚事务
-        }
+//        if ($status > 0)
+//        {
+//            DB::commit();   //手動提交事务
+//        }
+//        else
+//        {
+//            DB::rollback(); //手動回滚事务
+//        }
 
         return $status;
     }
@@ -344,6 +346,43 @@ class mod_user extends Authenticatable implements JWTSubject
         else
         {
             DB::rollback(); //手動回滚事务
+        }
+
+        return $status;
+    }
+
+    //导入
+    protected function import(array $data)
+    {
+        //参数过滤
+        $data_filter = mod_common::data_filter([
+            'file'       => 'required',
+        ], $data);
+
+        $status = 1;
+        try
+        {
+            if(!is_array($data_filter))
+            {
+                mod_model::exception('请选择文件', -1);
+            }
+
+            $file = empty($data_filter['file']) ? []: array_filter($data_filter['file']); //干掉空值
+            $data_filter['file'] = implode(',', $file);
+
+            $file_path = storage_path('app/public/doc')."/".$data_filter['file'];
+            Excel::import(new imp_user, $file_path);
+        }
+        catch (\Exception $e)
+        {
+            $status = mod_model::get_exception_status($e);
+            //记录日志
+            mod_common::logger(__METHOD__, [
+                'status'  => $status,
+                'errcode' => $e->getCode(),
+                'errmsg'  => $e->getMessage(),
+                'data'    => $data,
+            ]);
         }
 
         return $status;

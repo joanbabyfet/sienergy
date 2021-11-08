@@ -23,6 +23,10 @@ class CreateApiReqLogTable extends Migration
             $table->text('res_data')->nullable()->comment('响应数据，json格式');
             $table->integer('req_time')->default(0)->nullable()->comment('请求时间');
             $table->string('req_ip',15)->default('')->nullable()->comment('请求ip');
+            $table->index('uid');
+            $table->index('req_data');
+            $table->index('res_data');
+            $table->index('req_time');
         });
         $table = DB::getTablePrefix().'api_req_log';
         DB::statement("ALTER TABLE `{$table}` comment'api访问日志表'"); // 表注释

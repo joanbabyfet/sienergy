@@ -24,6 +24,8 @@ class CreateAdminUsersOplogTable extends Migration
             $table->string('op_ip',15)->default('')->nullable()->comment('操作ip');
             $table->string('op_country',2)->default('')->nullable()->comment('操作國家');
             $table->string('op_url',100)->default('')->nullable()->comment('操作地址');
+            $table->index('username');
+            $table->index('op_time');
         });
         $table = DB::getTablePrefix().'admin_users_oplog';
         DB::statement("ALTER TABLE `{$table}` comment'操作日志表'"); // 表注释
