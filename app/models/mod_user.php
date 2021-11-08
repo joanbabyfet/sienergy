@@ -216,7 +216,7 @@ class mod_user extends Authenticatable implements JWTSubject
             }
 
             $do         = $data_filter['do'];
-            $id         = $data_filter['id'];
+            $id         = $data_filter['id'] ?? '';
             $username   = $data_filter['username'] ?? '';
             $password   = $data_filter['password'] ?? '';
             $create_user  = $data_filter['create_user'] ?? '';
