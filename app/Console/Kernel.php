@@ -36,6 +36,7 @@ class Kernel extends ConsoleKernel
 
         //每天一点
         //$schedule->command('name:action')->dailyAt('01:00')->withoutOverlapping()->runInBackground();
+        $schedule->command('db:backup')->dailyAt('01:00')->withoutOverlapping()->runInBackground();
 
         //每小时
         //$schedule->command('name:action')->hourly()->withoutOverlapping()->runInBackground();
