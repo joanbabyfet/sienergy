@@ -208,7 +208,7 @@ class mod_user extends Authenticatable implements JWTSubject
         ], $data);
 
         //开启事务
-        DB::beginTransaction();
+        //DB::beginTransaction();
         $status = 1;
         try
         {
@@ -286,14 +286,14 @@ class mod_user extends Authenticatable implements JWTSubject
             ]);
         }
 
-        if ($status > 0)
-        {
-            DB::commit();   //手動提交事务
-        }
-        else
-        {
-            DB::rollback(); //手動回滚事务
-        }
+//        if ($status > 0)
+//        {
+//            DB::commit();   //手動提交事务
+//        }
+//        else
+//        {
+//            DB::rollback(); //手動回滚事务
+//        }
 
         return $status;
     }

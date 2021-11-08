@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToCollection;
-//use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithStartRow;
@@ -68,7 +68,7 @@ class imp_user implements ToCollection, WithBatchInserts, WithChunkReading, With
                 'do'            => 'add',
                 'origin'        => 0, //0=其他 1=官网 2=APP
                 'username'      => $row[0],
-                'password'      => Hash::make('Bb123456'),
+                'password'      => 'Bb123456',
                 'realname'      => $row[1],
                 'email'         => $row[2],
                 'phone_code'    => $row[3],
