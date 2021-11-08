@@ -183,6 +183,29 @@ class ctl_member extends Controller
         return mod_common::success([], trans('api.api_disable_success'));
     }
 
+    //导入
+    public function import(Request $request)
+    {
+        if($request->isMethod('POST'))
+        {
+            $status = mod_user::import([
+                'file'      => $request->input('excel', []),
+            ]);
+            if($status < 0)
+            {
+                return mod_common::error(mod_model::get_err_msg($status), $status);
+            }
+            //寫入日志
+            mod_admin_user_oplog::add_log("會員导入 ");
+
+            return mod_common::success([], trans('api.api_update_success'));
+        }
+        else
+        {
+            return view('admin.member_import', []);
+        }
+    }
+
     //設置獨立權限,已抛弃
 //    public function purview(Request $request)
 //    {

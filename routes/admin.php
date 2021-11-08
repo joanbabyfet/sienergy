@@ -85,6 +85,7 @@ Route::group(['middleware' => ['auth:admin']], function (){ //中间件执行顺
         Route::match(['GET', 'POST'], 'member/enable', 'ctl_member@enable')->name('admin.member.enable');
         Route::match(['GET', 'POST'], 'member/disable', 'ctl_member@disable')->name('admin.member.disable');
         Route::match(['GET', 'POST'], 'member/export_list', 'ctl_member@export_list')->name('admin.member.export_list');
+        Route::match(['GET', 'POST'], 'member/import', 'ctl_member@import')->name('admin.member.import');
         Route::match(['GET', 'POST'], 'member_level', 'ctl_member_level@index')->name('admin.member_level.index');
         Route::match(['GET', 'POST'], 'member_level/add', 'ctl_member_level@add')->name('admin.member_level.add');
         Route::match(['GET', 'POST'], 'member_level/edit', 'ctl_member_level@edit')->name('admin.member_level.edit');

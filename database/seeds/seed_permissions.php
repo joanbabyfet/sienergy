@@ -65,6 +65,7 @@ class seed_permissions extends Seeder
             ['admin.member.enable', 'admin', '會員啟用', 7, $created_at],
             ['admin.member.disable', 'admin', '會員禁用', 7, $created_at],
             ['admin.member.export_list', 'admin', '會員匯出', 7, $created_at],
+            ['admin.member.import', 'admin', '會員匯入', 7, $created_at],
             ['admin.member_login.index', 'admin', '登入日志列表', 7, $created_at],
             ['admin.member_login.delete', 'admin', '登入日志刪除', 7, $created_at],
             ['admin.member_login.export_list', 'admin', '登入日志匯出', 7, $created_at],
