@@ -30,6 +30,7 @@ class CreateFaqTable extends Migration
             $table->integer('delete_time')->default(0)->nullable()->comment("刪除時間");
             $table->char('delete_user', 32)->default('0')->nullable()->comment("刪除人");
             $table->primary(['id']);
+            $table->index('question');
         });
         $table = DB::getTablePrefix().'faq';
         DB::statement("ALTER TABLE `{$table}` comment'問答表'"); // 表注释

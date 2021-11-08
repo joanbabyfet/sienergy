@@ -14,7 +14,7 @@ class cron_test_mail extends Command
      *
      * @var string
      */
-    protected $signature = 'cron:test_mail';
+    protected $signature = 'mail:test';
 
     /**
      * The console command description.

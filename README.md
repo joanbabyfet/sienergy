@@ -1,5 +1,6 @@
 ## About
-基于CMS搭建的鑫盈能源官网，layui前端框架实现，结合mysql与MongoDB数据库
+基于CMS搭建的鑫盈能源官网，layui前端框架实现，结合mysql与MongoDB数据库  
+技术要求：redis，laravel 框架，异步队列，mysql 数据库优化，mongodb 存储日志
 
 ## Feature
 * 界面足够简洁清爽的CMS
@@ -14,6 +15,7 @@
 ## Requires
 PHP 7.2 or Higher  
 Redis
+MongoDB 3.2 or Higher
 
 ## Install
 ```

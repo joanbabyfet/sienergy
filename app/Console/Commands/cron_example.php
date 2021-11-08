@@ -16,7 +16,7 @@ class cron_example extends Command
      *
      * @var string
      */
-    protected $signature = 'cron:example';  // laravel指令命名,统一用cron:xxx
+    protected $signature = 'example:export';  // laravel指令命名,统一用name:action
 
     /**
      * The console command description.

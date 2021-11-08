@@ -51,7 +51,7 @@ class ctl_member extends Controller
          $status = mod_user::save_data([
             'do'           => 'add',
             'id'            => '',
-            'origin'        => 2, //0=其他 1=官网 2=用户端APP
+            'origin'        => 2, //0=其他 1=官网 2=APP
             'username'      => $data['username'],
             'password'      => $data['password'],
             'realname'      => $data['realname'],

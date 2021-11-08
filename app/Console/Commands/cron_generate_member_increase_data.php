@@ -12,7 +12,7 @@ class cron_generate_member_increase_data extends Command
      *
      * @var string
      */
-    protected $signature = 'cron:generate_member_increase_data';
+    protected $signature = 'member_increase_data:generate';
 
     /**
      * The console command description.

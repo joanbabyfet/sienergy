@@ -36,6 +36,8 @@
             <div class="layui-btn-container">
                 <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="batch_enable"><i class="layui-icon">&#xe605;</i>批量啟用</a>
                 <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="batch_disable"><i class="layui-icon">&#x1006;</i>批量禁用</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" onclick="admin.openLayerForm('{{ route("admin.member.import") }}', '會員匯入', 'POST', '400px', '300px')"><i class="layui-icon">&#xe67c;</i>匯入</a>
+                <a class="layui-btn layui-btn-sm layui-btn-primary" onclick="downloadMemberFile()">點擊下載模板</a>
                 <a class="layui-btn layui-btn-sm layui-btn-primary" lay-event="export"><i class="layui-icon">&#xe67d;</i>匯出</a>
             </div>
         </script>
@@ -198,5 +200,10 @@
                 $('#search-form').submit();
             });
         });
+
+        function downloadMemberFile(){
+            location.href = "admin/doc/member_import.xlsx";
+            return false;
+        }
     </script>
 @endsection
