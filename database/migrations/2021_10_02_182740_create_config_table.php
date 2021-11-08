@@ -28,6 +28,7 @@ class CreateConfigTable extends Migration
             $table->integer('update_time')->default(0)->nullable()->comment("修改時間");
             $table->char('update_user', 32)->default('0')->nullable()->comment("修改人");
             $table->primary(['name']);
+            $table->index('name');
         });
         $table = DB::getTablePrefix().'config';
         DB::statement("ALTER TABLE `{$table}` comment'系统配置变量表'"); // 表注释
