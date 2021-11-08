@@ -58,9 +58,9 @@ class mod_user extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
     public static $origin_map = [
-        0 => '其他',
-        1 => '官网',
-        2 => '用户端APP',
+        0 => '其他', //后台汇入
+        1 => '官网', //pc端
+        2 => 'APP',
     ];
     public static $return_data; //返回整个会员对象
 
