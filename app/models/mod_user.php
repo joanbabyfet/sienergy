@@ -203,6 +203,7 @@ class mod_user extends Authenticatable implements JWTSubject
             'login_time'        => '',
             'login_ip'          => '',
             'language'          => '',
+            'facebook_id'       => '',
             'create_user'       => '',
             'update_user'       => '',
         ], $data);

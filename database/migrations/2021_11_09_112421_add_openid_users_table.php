@@ -14,8 +14,8 @@ class AddOpenidUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('openid',60)->default('')->nullable()->comment('第三方openid')->after('language');
-            $table->index('openid');
+            $table->string('facebook_id',60)->default('')->nullable()->comment('第三方facebook_id')->after('language');
+            $table->index('facebook_id');
         });
     }
 
@@ -28,7 +28,7 @@ class AddOpenidUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //移除欄位
-            $table->dropColumn('openid');
+            $table->dropColumn('facebook_id');
         });
     }
 }

@@ -23,6 +23,8 @@ Route::get('password/reset', 'ctl_member@showLinkRequestForm')->name('web.passwo
 Route::post('password/email', 'ctl_member@sendResetLinkEmail')->name('web.password.email');
 Route::get('password/reset/{token}', 'ctl_reset_pwd@showResetForm')->name('password.reset'); //該路由為laravel默認值改了會報錯
 Route::post('password/reset', 'ctl_reset_pwd@reset')->name('web.password.update');
+Route::get('facebook-sign-in', 'ctl_login@facebookSignInProcess')->name('web.login.facebookSignInProcess');
+Route::get('facebook-sign-in-callback', 'ctl_login@facebookSignInCallbackProcess');
 
 Route::match(['GET', 'POST'], '/', 'ctl_index@index')->name('web.index.index');
 Route::match(['GET', 'POST'], 'about', 'ctl_about@index')->name('web.about.index');

@@ -7,12 +7,13 @@
 {{--            <a href="#">中文</a><span class="side">&nbsp;</span>--}}
             <a href="{{ route('web.links.index') }}"{!! Request::is('links') ? ' class="current"':'' !!}>友情鏈接</a><span class="side">&nbsp;</span>
             @guest($guard)
-                <a href="{{ route('web.login.showLoginForm') }}"{!! Request::is('links') ? ' class="current"':'' !!}>登入</a><span class="side">&nbsp;</span>
-                <a href="{{ route('web.member.showRegistrationForm') }}"{!! Request::is('links') ? ' class="current"':'' !!}>註冊</a>
+                <a href="{{ route('web.login.showLoginForm') }}"{!! Request::is('login') ? ' class="current"':'' !!}>登入</a><span class="side">&nbsp;</span>
+                <a href="{{ route('web.login.facebookSignInProcess') }}"{!! Request::is('facebook-sign-in') ? ' class="current"':'' !!}>fb登入</a><span class="side">&nbsp;</span>
+                <a href="{{ route('web.member.showRegistrationForm') }}"{!! Request::is('register') ? ' class="current"':'' !!}>註冊</a>
             @endguest
             @auth($guard)
-                <a href="{{ route('web.change_pwd.edit') }}"{!! Request::is('links') ? ' class="current"':'' !!}>修改密碼</a><span class="side">&nbsp;</span>
-                <a href="{{ route('web.login.logout') }}"{!! Request::is('links') ? ' class="current"':'' !!}>{{ $curr_user['username'] }} 登出</a>
+                <a href="{{ route('web.change_pwd.edit') }}"{!! Request::is('change_pwd') ? ' class="current"':'' !!}>修改密碼</a><span class="side">&nbsp;</span>
+                <a href="{{ route('web.login.logout') }}"{!! Request::is('logout') ? ' class="current"':'' !!}>{{ $curr_user['username'] }} 登出</a>
             @endauth
         </div>
     </div>
