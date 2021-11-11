@@ -116,7 +116,7 @@ class ctl_login extends Controller
         ]);
     }
 
-    //Facebook登入
+    //Facebook 登入
     public function facebookSignInProcess()
     {
         $redirect_url = config('services.facebook.redirect');
@@ -126,8 +126,8 @@ class ctl_login extends Controller
             ->redirect();
     }
 
-    //Facebook登入重定向授權資料處理
-    public function facebookSignInCallbackProcess(Request $request)
+    //Facebook 登入重定向授權資料處理
+    public function facebookSignInCallbackProcess()
     {
         if(request()->error=="access_denied")
         {
@@ -219,5 +219,18 @@ class ctl_login extends Controller
         $this->guard()->login($user);
         //重新導向到原先使用者造訪頁面，沒有嘗試造訪頁則重新導向回首頁
         return redirect()->intended('/');
+    }
+
+    //google 登入
+    public function googleSignInProcess()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    //google 登入重定向授權資料處理
+    public function googleSignInCallbackProcess()
+    {
+        $user = Socialite::driver('google')->stateless()->user();
+        dd($user);
     }
 }

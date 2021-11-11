@@ -9,6 +9,7 @@
             @guest($guard)
                 <a href="{{ route('web.login.showLoginForm') }}"{!! Request::is('login') ? ' class="current"':'' !!}>登入</a><span class="side">&nbsp;</span>
                 <a href="{{ route('web.login.facebookSignInProcess') }}"{!! Request::is('facebook-sign-in') ? ' class="current"':'' !!}>fb登入</a><span class="side">&nbsp;</span>
+                <a href="{{ route('web.login.googleSignInProcess') }}"{!! Request::is('google-sign-in') ? ' class="current"':'' !!}>google登入</a><span class="side">&nbsp;</span>
                 <a href="{{ route('web.member.showRegistrationForm') }}"{!! Request::is('register') ? ' class="current"':'' !!}>註冊</a>
             @endguest
             @auth($guard)

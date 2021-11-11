@@ -25,6 +25,8 @@ Route::get('password/reset/{token}', 'ctl_reset_pwd@showResetForm')->name('passw
 Route::post('password/reset', 'ctl_reset_pwd@reset')->name('web.password.update');
 Route::get('facebook-sign-in', 'ctl_login@facebookSignInProcess')->name('web.login.facebookSignInProcess');
 Route::get('facebook-sign-in-callback', 'ctl_login@facebookSignInCallbackProcess');
+Route::get('google-sign-in', 'ctl_login@googleSignInProcess')->name('web.login.googleSignInProcess');
+Route::get('google-sign-in-callback', 'ctl_login@googleSignInCallbackProcess');
 
 Route::match(['GET', 'POST'], '/', 'ctl_index@index')->name('web.index.index');
 Route::match(['GET', 'POST'], 'about', 'ctl_about@index')->name('web.about.index');
