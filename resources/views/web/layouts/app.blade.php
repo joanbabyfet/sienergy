@@ -37,3 +37,4 @@
 @include('web.common.google_analytics')
 {{--@include('web.common.fb_login')--}}
 </body>
+</html>
