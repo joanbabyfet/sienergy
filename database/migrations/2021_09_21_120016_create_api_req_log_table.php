@@ -24,8 +24,6 @@ class CreateApiReqLogTable extends Migration
             $table->integer('req_time')->default(0)->nullable()->comment('请求时间');
             $table->string('req_ip',15)->default('')->nullable()->comment('请求ip');
             $table->index('uid');
-            $table->index('req_data');
-            $table->index('res_data');
             $table->index('req_time');
         });
         $table = DB::getTablePrefix().'api_req_log';
