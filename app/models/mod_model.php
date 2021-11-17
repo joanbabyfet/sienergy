@@ -368,7 +368,8 @@ class mod_model extends Model
                 {
                     if(is_array($value[2]))
                     {
-                        $query->whereIn($field, $value[2]);
+                        ($value[1] == 'not in') ? $query->whereNotIn($field, $value[2]) :
+                            $query->whereIn($field, $value[2]);
                     }
                     else
                     {
