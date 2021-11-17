@@ -59,11 +59,13 @@
             var form = layui.form;
             form.verify(verify);
             //table.init("table-hide"); //初始化,靜態表格轉動態,獲取lay-filter值,獲取lay-filter值
+            var data ='{!! $list !!}';//后台json字符串
+            data = JSON.parse(data); //数据格式解析
 
             var treeTable = layui.treeTable;
             treeTable.render({  //執行方法渲染
                 elem: '#tree-table',
-                data: {!! $list !!},
+                data: data,
                 //is_checkbox: true, //顯示複選框
                 icon_key: 'name', //必須
                 primary_key: 'id',
