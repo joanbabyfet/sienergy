@@ -22,6 +22,7 @@ MongoDB 3.2 or Higher
 composer install
 cp .env.example .env
 php artisan app:install
+php artisan storage:link
 php artisan jwt:secret
 ```
 

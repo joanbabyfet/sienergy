@@ -44,7 +44,7 @@ class cron_install extends Command
         Artisan::call("key:generate");
         Artisan::call("migrate:refresh");
         Artisan::call("db:seed");
-        Artisan::call("storage:link");
+        //Artisan::call("storage:link");
         //Artisan::call("jwt:secret");
 
         $size = memory_get_usage();
