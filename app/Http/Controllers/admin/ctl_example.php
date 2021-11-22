@@ -44,9 +44,8 @@ class ctl_example extends Controller
         {
             $titles = [
                 'title'             =>'標題',
-                'create_user_dis'   =>'作者',
                 'sort'              =>'排序',
-                'status'            =>'發布',
+                'status_dis'        =>'狀態',
                 'create_time_dis'   =>'添加時間',
             ];
 

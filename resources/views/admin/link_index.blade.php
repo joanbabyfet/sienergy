@@ -48,7 +48,7 @@
                 <th lay-data="{field:'id', type:'checkbox', fixed:'left'}"></th>
                 <th lay-data="{field:'name'}">鏈接名稱</th>
                 <th lay-data="{field:'url'}">鏈接地址</th>
-                <th lay-data="{field:'status'}">狀態</th>
+                <th lay-data="{field:'status_dis'}">狀態</th>
                 <th lay-data="{field:'action', fixed: 'right', width:200, align:'center'}">操作</th>
             </tr>
             </thead>

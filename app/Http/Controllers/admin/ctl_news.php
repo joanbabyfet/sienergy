@@ -54,7 +54,9 @@ class ctl_news extends Controller
         {
             $titles = [
                 'title'             =>'標題',
-                'create_user_dis'   =>'作者',
+                'sort'              =>'排序',
+                'status_dis'        =>'狀態',
+                'create_time_dis'   =>'添加時間',
             ];
 
             return mod_common::export_data([

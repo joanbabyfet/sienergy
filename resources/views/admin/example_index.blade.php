@@ -47,9 +47,9 @@
             <tr>
                 <th lay-data="{field:'id', type:'checkbox', fixed:'left'}"></th>
                 <th lay-data="{field:'title'}">標題</th>
-                <th lay-data="{field:'create_user_dis'}">作者</th>
+{{--                <th lay-data="{field:'create_user_dis'}">作者</th>--}}
                 <th lay-data="{field:'sort', sort:true}">排序</th>
-                <th lay-data="{field:'status'}">狀態</th>
+                <th lay-data="{field:'status_dis'}">狀態</th>
                 <th lay-data="{field:'create_time_dis', sort:true}">添加時間</th>
                 <th lay-data="{field:'action', fixed: 'right', width:200, align:'center'}">操作</th>
             </tr>
@@ -59,7 +59,7 @@
                 <tr>
                     <td>{{ $v['id'] }}</td>
                     <td>{{ $v['title'] }}</td>
-                    <td>{{ $v['create_user_dis'] ?: '-' }}</td>
+{{--                    <td>{{ $v['create_user_dis'] ?: '-' }}</td>--}}
                     <td>{{ $v['sort'] }}</td>
                     <td>{{ $v['status_dis'] }}</td>
                     <td>{{ $v['create_time_dis'] }}</td>
