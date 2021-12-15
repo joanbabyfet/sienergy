@@ -11,6 +11,7 @@
 |
 */
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('login', 'ctl_login@showLoginForm')->name('admin.login.showLoginForm'); //登录页
@@ -18,6 +19,11 @@ Route::get('login', 'ctl_login@showLoginForm')->name('admin.login.showLoginForm'
 Route::post('login', 'ctl_login@login')->name('admin.login.login')->middleware('throttle:60,1');
 Route::get('logout', 'ctl_login@logout')->name('admin.login.logout'); //退出
 Route::get('get_csrf_token', 'ctl_common@get_csrf_token')->name('admin.common.get_csrf_token'); //后台接口测试用
+Route::match(['GET', 'POST'], 'ajax_get_area', 'ctl_common@ajax_get_area')->name('admin.common.ajax_get_area');
+Route::get('hello-cors', function (Request $request){
+    return response()->json(['hello laravel with cors']);
+});
+Route::match(['GET', 'POST'], 'test', 'ctl_test@index')->name('admin.test.index');
 
 Route::group(['middleware' => ['auth:admin']], function (){ //中间件执行顺序由外层而内
     //主入口

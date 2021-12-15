@@ -10,7 +10,9 @@
     "require": {
         "php": "^7.2.5|^8.0",
         "fideloper/proxy": "^4.4",
+        "fruitcake/laravel-cors": "^2.0",
         "google/cloud-translate": "^1.10",
+        "guzzlehttp/guzzle": "^7.4",
         "intervention/image": "^2.6",
         "jaeger/querylist": "^4.2",
         "jaeger/querylist-absolute-url": "^4.0",
