@@ -22,7 +22,7 @@ return [
      * Example: ['api/*']
      * 跨域api路由访问
      */
-    'paths' => ['*'],
+    'paths' => ['/*'],
 
     /*
     * Matches the request method. `['*']` allows all methods.

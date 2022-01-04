@@ -34,7 +34,7 @@
             var form = layui.form;
             form.verify(verify);
 
-            $.get('http://api.sienergy_api.local/ip', [], function(res) {
+            $.get('http://api.lifenews.local/ip', [], function(res) {
                 if (res.code === 0) {
                     console.log(res);
                 } else {

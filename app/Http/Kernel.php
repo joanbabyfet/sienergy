@@ -14,6 +14,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [ //全局中间件,每次请求,每个中间件都会执行
+        \Fruitcake\Cors\HandleCors::class, //跨域解决
         \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\CheckForMaintenanceMode::class, //检测是否系统维护中
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
