@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * 注册树模式
+ * 应用场景: 项目环境初始化
+ * 在工厂模式中添加 mod_register::set('db1', $db)后,使用时调用 mod_register::get('db1')
  * 例laravel自带config/app.php aliases就是用该模式
- * 在工厂模式中添加 mod_register::set('db1', $db)后,
- * 使用时调用 mod_register::get('db1')
  * Class mod_register
  * @package App\models
  */
