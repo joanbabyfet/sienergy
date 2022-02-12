@@ -2,10 +2,6 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\models\mod_admin_user;
-use App\models\mod_common;
-use App\models\mod_permission;
-use App\models\mod_user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;

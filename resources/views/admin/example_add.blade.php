@@ -116,8 +116,9 @@
 
         $('#content').redactor({
             imageWebUpload: '{{ route('admin.upload.upload') }}',
-            imageUpload: '{{ route('admin.upload.upload') }}',
+            videoUpload: '{{ route('admin.upload.upload') }}',
             imageDir: 'image',
+            videoDir: 'video',
             thumbWidth: 0,
             thumbHeight: 0,
             plugins: ['webuploadImage', 'webuploadVideo', 'fontcolor'],

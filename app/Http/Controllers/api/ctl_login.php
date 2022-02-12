@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\models\mod_common;
+use App\models\mod_display;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
@@ -36,7 +37,9 @@ class ctl_login extends Controller
         $user_info = auth($guard)->authenticate($token)->toArray();
         $user_info['api_token'] = $token;
         $jwt_ttl = auth($guard)->factory()->getTTL(); //單位:分鐘
-        $user_info['api_token_expire'] = strtotime("+{$jwt_ttl} minutes", time());
+        $api_token_expire = strtotime("+{$jwt_ttl} minutes", time());
+        $user_info['api_token_expire'] = $api_token_expire;
+        $user_info['api_token_expire_dis'] = mod_display::datetime($api_token_expire);
 
         return mod_common::success($user_info, trans('api.api_login_success'));
     }
@@ -61,24 +64,20 @@ class ctl_login extends Controller
      */
     public function refresh_token()
     {
-        try
-        {
-            $guard = $this->guard;
-            $token = auth($guard)->refresh();
+        $guard = $this->guard;
+        $token = auth($guard)->refresh();
 
-            //根据token获取用户信息,jwt后台不需要保存Token
-            $user_info = auth($guard)->authenticate($token)->toArray();
-            $jwt_ttl = auth($guard)->factory()->getTTL(); //單位:分鐘
-        }
-        catch(TokenInvalidException $e)
-        {
-            return mod_common::error('获取token失败', -4004); //token不合法
-        }
+        //根据token获取用户信息,jwt后台不需要保存Token
+        $user_info = auth($guard)->authenticate($token)->toArray();
+        $jwt_ttl = auth($guard)->factory()->getTTL(); //單位:分鐘
+
+        $api_token_expire = strtotime("+{$jwt_ttl} minutes", time());
 
         return mod_common::success([
             'uid'               =>  $user_info['id'],
             'api_token'         =>  $token,
-            'api_token_expire'  =>  strtotime("+{$jwt_ttl} minutes", time()),
+            'api_token_expire'  =>  $api_token_expire,
+            'api_token_expire_dis'  => mod_display::datetime($api_token_expire),
         ]);
     }
 }
