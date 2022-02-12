@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\models\mod_area;
 use App\models\mod_req;
 use Illuminate\Http\Request;
 use App\models\mod_google;
@@ -62,5 +63,16 @@ class ctl_common extends Controller
                 'token' => $request->session()->getId(),
             ]);
         }
+    }
+
+    //获取所有区域下级列表
+    public function ajax_get_area(Request $request)
+    {
+        $pid = $request->input('pid', 0);
+
+        //獲取數據
+        $rows = mod_area::get_options($pid);
+
+        return mod_common::success($rows);
     }
 }

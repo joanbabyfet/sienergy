@@ -15,3 +15,5 @@ composer.lock
 *.ipr
 *.iws
 .DS_Store
+Homestead.json
+Homestead.yaml

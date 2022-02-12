@@ -44,7 +44,10 @@ class ctl_faq extends Controller
         if(mod_common::get_action() == 'export_list') //獲取調用方法名
         {
             $titles = [
-                'question'             =>'問題',
+                'question'          =>'問題',
+                'sort'              =>'排序',
+                'status_dis'        =>'狀態',
+                'create_time_dis'   =>'添加時間',
             ];
 
             return mod_common::export_data([

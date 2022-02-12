@@ -40,14 +40,14 @@
                     <div class="msgBox">
                         <div class="msgBoxA">
                             <div class="topSide">&nbsp;</div>
-                            <div class="mbContent"><strong>Q{{ $i }}.</strong> {!! $v['question'] !!}</div>
+                            <div class="mbContent"><strong>Q{{ $i }}.</strong> {!! nl2br($v['question']) !!}</div>
                             <div class="belowSide">&nbsp;</div>
                             <div class="mbArrow">&nbsp;</div>
                         </div>
                         <div class="msgBoxB">
                             <div class="topSide">&nbsp;</div>
                             <div class="mbContent"><strong>ANS:</strong>
-                                {!! $v['answer'] !!}
+                                {!! nl2br($v['answer']) !!}
                             </div>
                             <div class="belowSide">&nbsp;</div>
                             <div class="mbArrow">&nbsp;</div>

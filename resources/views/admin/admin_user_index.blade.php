@@ -51,7 +51,7 @@
 {{--                <th lay-data="{field:'email'}">郵箱</th>--}}
                 <th lay-data="{field:'role_name'}">用戶組</th>
                 <th lay-data="{field:'login_time_dis'}">上次登入</th>
-                <th lay-data="{field:'status'}">狀態</th>
+                <th lay-data="{field:'status_dis'}">狀態</th>
                 <th lay-data="{field:'create_time_dis'}">添加時間</th>
                 <th lay-data="{field:'action', fixed: 'right', width:200, align:'center'}">操作</th>
             </tr>

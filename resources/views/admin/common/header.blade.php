@@ -17,8 +17,9 @@
                 @endauth
             </a>
             <dl class="layui-nav-child">
-                <dd><a href="{{ route("admin.admin_user.editpwd") }}">修改密碼</a></dd>
-                <dd><a href="{{ route("admin.login.logout") }}">退出登入</a></dd>
+                <dd style="text-align: center;"><a href="{{ route("admin.admin_user.editpwd") }}">修改密碼</a></dd>
+                <hr>
+                <dd style="text-align: center;"><a href="{{ route("admin.login.logout") }}">退出</a></dd>
             </dl>
         </li>
         <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>

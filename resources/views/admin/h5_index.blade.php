@@ -48,7 +48,7 @@
                 <th lay-data="{field:'id', type:'checkbox', fixed:'left'}"></th>
                 <th lay-data="{field:'url'}">URL</th>
                 <th lay-data="{field:'name'}">標題</th>
-                <th lay-data="{field:'status'}">狀態</th>
+                <th lay-data="{field:'status_dis'}">狀態</th>
                 <th lay-data="{field:'create_time_dis', sort:true}">添加時間</th>
                 <th lay-data="{field:'action', fixed: 'right', width:200, align:'center'}">操作</th>
             </tr>

@@ -42,10 +42,10 @@ class cron_install extends Command
 
         //執行腳本,将任务放入异步队列中
         Artisan::call("key:generate");
-        Artisan::call("migrate");
+        Artisan::call("migrate:refresh");
         Artisan::call("db:seed");
-        Artisan::call("sorage:link");
-        Artisan::call("jwt:secre");
+        //Artisan::call("storage:link");
+        //Artisan::call("jwt:secret");
 
         $size = memory_get_usage();
         $unit = array('b','kb','mb','gb','tb','pb');
